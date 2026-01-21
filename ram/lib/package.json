@@ -1,0 +1,17 @@
+{
+  "name": "ram-ai",
+  "version": "1.0.0",
+  "description": "React-like framework for AI context",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": ["ai", "react", "hooks", "markdown"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.0"
+  }
+}

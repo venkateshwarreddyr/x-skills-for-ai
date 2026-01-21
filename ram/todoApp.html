@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-React Todo App</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        // Inline aiReact.js functions
+        function useAIState(initialState) {
+            let state = { ...initialState };
+            const setState = (newState) => {
+                state = { ...state, ...newState };
+                return state;
+            };
+            return [state, setState];
+        }
+
+        function useAIEffect(callback, deps) {
+            callback();
+        }
+
+        function getAllowedActions(state, actions) {
+            return actions.filter((a) => a.requires(state));
+        }
+
+        function checkInvariants(state, invariants) {
+            invariants.forEach((inv) => inv(state));
+        }
+
+        function renderHTML(options) {
+            const { state, allowedActions, goals, onAction } = options;
+            let html = `<h1>Current State</h1><pre>${JSON.stringify(state, null, 2)}</pre>`;
+
+            html += `<h2>Allowed Actions</h2>`;
+            allowedActions.forEach((a, i) => {
+                if (a.payloadSchema) {
+                    // For actions with payload, render form
+                    if (a.name === 'AddTodo') {
+                        html += `<form onsubmit="handleAction('${a.name}', {title: this.title.value}); return false;">
+                            <input type="text" name="title" placeholder="Enter todo title" required>
+                            <button type="submit">${a.name}</button>
+                        </form>`;
+                    }
+                } else {
+                    html += `<button onclick="handleAction('${a.name}')">${a.name}</button>`;
+                }
+            });
+
+            html += `<h2>Goals</h2><ul>`;
+            goals.forEach((g) => {
+                html += `<li>${g}</li>`;
+            });
+            html += `</ul>`;
+
+            return html;
+        }
+
+        // Actions
+        const AddTodo = {
+            name: 'AddTodo',
+            requires: (state) => true,
+            effects: (state, payload) => ({
+                ...state,
+                todos: [...state.todos, { id: crypto.randomUUID(), title: payload?.title || 'New Task', done: false }],
+            }),
+            payloadSchema: { title: 'string' },
+        };
+
+        const CompleteTodo = {
+            name: 'CompleteTodo',
+            requires: (state) => state.todos.some((t) => !t.done),
+            effects: (state) => ({
+                ...state,
+                todos: state.todos.map((t) => ({ ...t, done: true })),
+            }),
+        };
+
+        // Invariants
+        const invariants = [
+            (state) => {
+                if (state.todos.length > 10) throw new Error('Cannot have more than 10 todos');
+            },
+        ];
+
+        // App state
+        let currentState = { todos: [] };
+        const actions = [AddTodo, CompleteTodo];
+
+        function updateApp() {
+            const allowedActions = getAllowedActions(currentState, actions);
+            const html = renderHTML({
+                state: currentState,
+                allowedActions,
+                goals: ['Complete all todos'],
+                onAction: handleAction,
+            });
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function handleAction(actionName, payload) {
+            const action = actions.find(a => a.name === actionName);
+            if (action) {
+                try {
+                    checkInvariants(currentState, invariants);
+                    currentState = action.effects(currentState, payload);
+                    updateApp();
+                } catch (error) {
+                    alert(error.message);
+                }
+            }
+        }
+
+        // Make handleAction global for onclick
+        window.handleAction = handleAction;
+
+        // Initial render
+        updateApp();
+    </script>
+</body>
+</html>
