@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App Demo</title>
+  <script src="https://unpkg.com/xstate@4/dist/xstate.js"></script>
+</head>
+<body>
+  <h1>Todo App</h1>
+  <div id="todo">
+    <p>Status: <span id="status">PENDING</span></p>
+    <button id="startBtn" onclick="send('StartTodo')">Start Todo</button>
+    <button id="completeBtn" onclick="send('CompleteTodo')">Complete Todo</button>
+  </div>
+
+  <script>
+    const { createMachine, assign, interpret } = XState;
+
+    const machine = createMachine({
+      id: "ailang",
+      initial: "running",
+      context: {
+        Todo: {"id":null,"title":null,"status":"PENDING"}
+      },
+      states: {
+        running: {
+          on: {
+            StartTodo: {
+              cond: (ctx) => ctx.Todo.status === "PENDING",
+              actions: assign({
+                Todo: (ctx) => ({ ...ctx.Todo, status: "IN_PROGRESS" })
+              })
+            },
+            CompleteTodo: {
+              cond: (ctx) => ctx.Todo.status === "IN_PROGRESS",
+              actions: assign({
+                Todo: (ctx) => ({ ...ctx.Todo, status: "DONE" })
+              })
+            }
+          }
+        }
+      }
+    });
+
+    const service = interpret(machine).onTransition((state) => {
+      document.getElementById('status').textContent = state.context.Todo.status;
+      document.getElementById('startBtn').disabled = state.context.Todo.status !== "PENDING";
+      document.getElementById('completeBtn').disabled = state.context.Todo.status !== "IN_PROGRESS";
+    }).start();
+
+    function send(event) {
+      service.send(event);
+    }
+  </script>
+</body>
+</html>

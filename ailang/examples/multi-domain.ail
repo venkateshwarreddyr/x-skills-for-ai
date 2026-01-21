@@ -1,0 +1,51 @@
+state Todo {
+    id: string
+    title: string
+    status: PENDING | IN_PROGRESS | DONE
+}
+
+state User {
+    id: string
+    role: MEMBER | ADMIN
+}
+
+state Invoice {
+    id: string
+    status: DRAFT | APPROVED | PAID
+    amount: number
+}
+
+action StartTodo(todo_id: string) {
+    requires Todo.status == PENDING
+    effect Todo.status = IN_PROGRESS
+    emit EventTodoStarted(todo_id)
+}
+
+action CompleteTodo(todo_id: string) {
+    requires Todo.status == IN_PROGRESS
+    effect Todo.status = DONE
+    emit EventTodoCompleted(todo_id)
+}
+
+action ApproveInvoice(invoice_id: string) {
+    requires Invoice.status == DRAFT
+    requires User.role == ADMIN
+    effect Invoice.status = APPROVED
+    emit EventInvoiceApproved(invoice_id)
+}
+
+action PayInvoice(invoice_id: string) {
+    requires Invoice.status == APPROVED
+    effect Invoice.status = PAID
+    emit EventInvoicePaid(invoice_id)
+}
+
+workflow TodoLifecycle {
+    start -> StartTodo
+    StartTodo -> CompleteTodo
+}
+
+workflow InvoiceLifecycle {
+    start -> ApproveInvoice
+    ApproveInvoice -> PayInvoice
+}

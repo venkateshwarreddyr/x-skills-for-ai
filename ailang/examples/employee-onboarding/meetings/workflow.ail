@@ -1,0 +1,3 @@
+workflow MeetingWorkflow {
+    SCHEDULED -> CompleteMeeting -> COMPLETED
+}

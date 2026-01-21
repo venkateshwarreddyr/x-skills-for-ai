@@ -1,0 +1,9 @@
+state Equipment {
+    employee_id: string
+    type: LAPTOP | PHONE | MONITOR
+    status: PENDING | ASSIGNED
+}
+
+derived Equipment.all_assigned {
+    when all Equipment.status == ASSIGNED
+}

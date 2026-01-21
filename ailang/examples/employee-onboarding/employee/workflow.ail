@@ -1,0 +1,4 @@
+workflow EmployeeLifecycle {
+    NEW -> StartInduction -> INDUCTION
+    INDUCTION -> ActivateEmployee -> ACTIVE
+}

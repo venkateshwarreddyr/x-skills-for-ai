@@ -1,0 +1,29 @@
+
+import { createMachine, assign } from "xstate";
+
+export const machine = createMachine({
+  id: "ailang",
+  initial: "running",
+  context: {
+    Todo: {"id":null,"title":null,"status":"PENDING"}
+  },
+  states: {
+    running: {
+      on: {
+        StartTodo: {
+          cond: (ctx) => eval('Todo.status == PENDING', { ...ctx }),
+          actions: assign({
+            Todo: (ctx) => ({ ...ctx.Todo, status: "IN_PROGRESS" })
+          })
+        },
+
+        CompleteTodo: {
+          cond: (ctx) => eval('Todo.status == IN_PROGRESS', { ...ctx }),
+          actions: assign({
+            Todo: (ctx) => ({ ...ctx.Todo, status: "DONE" })
+          })
+        }
+      }
+    }
+  }
+});

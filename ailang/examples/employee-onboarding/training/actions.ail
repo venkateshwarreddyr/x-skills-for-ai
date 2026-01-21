@@ -1,0 +1,4 @@
+action CompleteTraining(employee_id: string, course: string) {
+    requires Training.status == PENDING
+    effect Training.status = COMPLETED
+}

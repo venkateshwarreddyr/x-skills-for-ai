@@ -1,0 +1,4 @@
+workflow DocumentWorkflow {
+    PENDING -> SubmitDocument -> SUBMITTED
+    SUBMITTED -> VerifyDocument -> VERIFIED
+}

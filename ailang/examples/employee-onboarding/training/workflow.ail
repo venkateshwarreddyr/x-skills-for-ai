@@ -1,0 +1,3 @@
+workflow TrainingWorkflow {
+    PENDING -> CompleteTraining -> COMPLETED
+}
