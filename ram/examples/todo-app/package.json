@@ -1,0 +1,23 @@
+{
+  "name": "ram-todo-app",
+  "version": "1.0.0",
+  "description": "A modular todo app built with the RAM AI framework",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node index.ts"
+  },
+  "keywords": [
+    "todo",
+    "ai",
+    "ram",
+    "react-like"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.0",
+    "ts-node": "^10.9.2"
+  }
+}
