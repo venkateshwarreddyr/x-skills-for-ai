@@ -1,0 +1,12 @@
+{
+  "name": "x-skills-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo for AI skills development",
+  "workspaces": [
+    "react/lib"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=react/lib",
+    "install-all": "npm install"
+  }
+}
