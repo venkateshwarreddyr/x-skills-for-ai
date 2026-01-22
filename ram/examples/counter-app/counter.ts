@@ -1,5 +1,5 @@
-import { useState, useEffect, resetHooks } from '../../lib/dist';
-import { Action, getAllowedActions, checkInvariants, renderMarkdown, executeAction } from '../../lib/dist';
+import { useState, useEffect, resetHooks } from '../../lib/src';
+import { Action, getAllowedActions, checkInvariants, renderMarkdown, executeAction } from '../../lib/src';
 import * as readline from 'readline';
 
 // Define actions
