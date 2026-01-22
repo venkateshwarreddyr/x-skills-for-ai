@@ -64,6 +64,37 @@ export function generateCheckpointId(): string {
   return `cp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 }
 
+export class InMemorySaver {
+  private checkpoints = new Map<string, Checkpoint>();
+
+  async put(threadId: string, checkpoint: Checkpoint): Promise<Checkpoint> {
+    const key = `${threadId}_${checkpoint.id}`;
+    this.checkpoints.set(key, checkpoint);
+    return checkpoint;
+  }
+
+  async get(threadId: string, checkpointId: string): Promise<Checkpoint | null> {
+    const key = `${threadId}_${checkpointId}`;
+    return this.checkpoints.get(key) || null;
+  }
+
+  async list(threadId: string): Promise<Checkpoint[]> {
+    const prefix = `${threadId}_`;
+    return Array.from(this.checkpoints.entries())
+      .filter(([key]) => key.startsWith(prefix))
+      .map(([, cp]) => cp);
+  }
+
+  async deleteThread(threadId: string): Promise<void> {
+    const prefix = `${threadId}_`;
+    for (const key of this.checkpoints.keys()) {
+      if (key.startsWith(prefix)) {
+        this.checkpoints.delete(key);
+      }
+    }
+  }
+}
+
 export function createCheckpoint(
   state: any,
   context: string,

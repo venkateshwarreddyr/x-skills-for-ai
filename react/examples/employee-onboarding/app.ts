@@ -1,6 +1,6 @@
-import { useState, useEffect, resetHooks } from "ram-ai/hooks";
-import { getAllowedActions, checkInvariants, executeAction } from "ram-ai/actions";
-import { renderMarkdown } from "ram-ai/renderer";
+import { useState, useEffect, resetHooks } from "x-skills-for-ai/hooks";
+import { getAllowedActions, checkInvariants, executeAction } from "x-skills-for-ai/actions";
+import { renderMarkdown } from "x-skills-for-ai/renderer";
 import { AppState } from "./types";
 import { actions } from "./actions";
 import { invariants } from "./invariants";

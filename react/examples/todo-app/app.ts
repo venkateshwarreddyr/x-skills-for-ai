@@ -1,10 +1,10 @@
-import { useState, useEffect, resetHooks } from './lib/src/hooks';
-import { getAllowedActions, checkInvariants, executeAction } from './lib/src/actions';
-import { renderMarkdown } from './lib/src/renderer';
+import { useState, useEffect, resetHooks } from 'x-skills-for-ai/hooks';
+import { getAllowedActions, checkInvariants, executeAction } from 'x-skills-for-ai/actions';
+import { renderMarkdown } from 'x-skills-for-ai/renderer';
 import { TodoState } from './types';
 import { addTodo, toggleTodo, deleteTodo, clearCompleted } from './actions';
 import { noEmptyText, uniqueIds } from './invariants';
-import { Action } from './lib/src/types';
+import { Action } from 'x-skills-for-ai/types';
 
 const initialState: TodoState = {
   todos: []

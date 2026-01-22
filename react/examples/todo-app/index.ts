@@ -1,8 +1,8 @@
 import * as readline from 'readline';
 import { TodoApp } from './app';
 import { addTodo, toggleTodo, deleteTodo, clearCompleted } from './actions';
-import { Action } from './lib/src/types';
-import { InMemorySaver, createCheckpoint } from './checkpoint';
+import { Action } from 'x-skills-for-ai/types';
+import { InMemorySaver, createCheckpoint } from 'x-skills-for-ai/checkpoint';
 
 const actions = [addTodo, toggleTodo, deleteTodo, clearCompleted];
 
@@ -42,7 +42,7 @@ async function runApp() {
     }
 
     if (choice.toLowerCase() === 'checkpoints') {
-      const checkpoints = saver.list(threadId);
+      const checkpoints = await saver.list(threadId);
       console.log('\nCheckpoints:');
       checkpoints.forEach((cp, index) => {
         console.log(`${index + 1}. ${cp.id} - ${cp.timestamp} - ${cp.metadata?.action || 'render'}`);

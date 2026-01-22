@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Monorepo for AI skills development",
   "workspaces": [
-    "react/lib"
+    "react/lib",
+    "react/examples/*"
   ],
   "scripts": {
     "build": "npm run build --workspace=react/lib",
