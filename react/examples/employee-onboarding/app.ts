@@ -1,6 +1,5 @@
 import { useState, useEffect, resetHooks } from "x-skills-for-ai/hooks";
 import { getAllowedActions, checkInvariants, executeAction } from "x-skills-for-ai/actions";
-import { renderMarkdown } from "x-skills-for-ai/renderer";
 import { AppState } from "./types.js";
 import { actions } from "./actions.js";
 import { invariants } from "./invariants.js";
