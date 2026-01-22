@@ -2,16 +2,16 @@
   "name": "ram-ai",
   "version": "1.0.0",
   "description": "React-like framework for AI context",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./types": "./dist/types.js",
-    "./hooks": "./dist/hooks.js",
-    "./actions": "./dist/actions.js",
-    "./renderer": "./dist/renderer.js",
-    "./checkpoint": "./dist/checkpoint.js",
-    "./app": "./dist/app.js"
+    ".": "./src/index.js",
+    "./types": "./src/types.js",
+    "./hooks": "./src/hooks.js",
+    "./actions": "./src/actions.js",
+    "./renderer": "./src/renderer.js",
+    "./checkpoint": "./src/checkpoint.js",
+    "./app": "./src/app.js"
   },
   "scripts": {
     "build": "tsc",
@@ -28,7 +28,7 @@
   "author": "",
   "license": "MIT",
   "files": [
-    "dist/**/*"
+    "src/**/*"
   ],
   "devDependencies": {
     "@types/node": "^18.0.0",
