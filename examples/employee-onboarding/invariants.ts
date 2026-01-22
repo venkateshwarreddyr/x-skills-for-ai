@@ -7,7 +7,7 @@ export const invariants = [
     }
   },
   (state: AppState) => {
-    if (state.workflow === "VERIFIED" && !state.employee.incomes.every(i => i.verified)) {
+    if (state.workflow === "INCOME_READY" && !state.employee.incomes.every(i => i.verified)) {
       throw new Error("All incomes must be verified before proceeding");
     }
   },
@@ -17,7 +17,7 @@ export const invariants = [
     }
   },
   (state: AppState) => {
-    if (state.workflow === "DOCUMENTS_COLLECTED" && !state.employee.documents.every(d => d.submitted)) {
+    if (state.workflow === "DOCUMENTS_READY" && !state.employee.documents.every(d => d.submitted)) {
       throw new Error("All documents must be submitted before proceeding");
     }
   },
@@ -27,7 +27,7 @@ export const invariants = [
     }
   },
   (state: AppState) => {
-    if (state.workflow === "EQUIPMENT_ASSIGNED" && state.employee.equipment.length === 0) {
+    if (state.workflow === "RESOURCES_READY" && state.employee.equipment.length === 0) {
       throw new Error("At least one equipment must be assigned before proceeding");
     }
   },
@@ -37,7 +37,7 @@ export const invariants = [
     }
   },
   (state: AppState) => {
-    if (state.workflow === "TRAINING_COMPLETED" && state.employee.training.length === 0) {
+    if (state.workflow === "RESOURCES_READY" && state.employee.training.length === 0) {
       throw new Error("At least one training must be completed before proceeding");
     }
   },
@@ -47,7 +47,7 @@ export const invariants = [
     }
   },
   (state: AppState) => {
-    if (state.workflow === "MEETINGS_SCHEDULED" && state.employee.meetings.length === 0) {
+    if (state.workflow === "RESOURCES_READY" && state.employee.meetings.length === 0) {
       throw new Error("At least one meeting must be scheduled before proceeding");
     }
   },
@@ -57,7 +57,7 @@ export const invariants = [
     }
   },
   (state: AppState) => {
-    if (state.workflow === "ACCOUNTS_CREATED" && state.employee.accounts.length === 0) {
+    if (state.workflow === "RESOURCES_READY" && state.employee.accounts.length === 0) {
       throw new Error("At least one account must be created before completing onboarding");
     }
   }
