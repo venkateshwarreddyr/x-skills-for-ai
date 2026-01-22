@@ -2,14 +2,18 @@
   "name": "ram-employee-onboarding-example",
   "version": "1.0.0",
   "description": "Employee onboarding workflow example for RAM AI framework",
+  "type": "module",
   "main": "index.ts",
+  "imports": {
+    "#lib/*": "../../lib/src/*"
+  },
   "scripts": {
     "build": "tsc",
-    "start": "ts-node index.ts"
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@xstate/fsm": "^2.1.0",
-    "x-skills-for-ai": "*"
+    "x-skills-for-ai": "file:../../lib"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",

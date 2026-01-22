@@ -1,6 +1,6 @@
 import * as readline from 'readline';
-import { EmployeeOnboardingApp } from './app';
-const { InMemorySaver, createCheckpoint } = require('../lib/dist/checkpoint');
+import { EmployeeOnboardingApp } from './app.js';
+import { InMemorySaver, createCheckpoint } from 'x-skills-for-ai/checkpoint';
 
 const saver = new InMemorySaver();
 const threadId = 'onboarding-session';

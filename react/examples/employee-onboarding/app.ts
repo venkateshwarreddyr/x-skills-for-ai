@@ -1,10 +1,10 @@
-const { useState, useEffect, resetHooks } = require("../lib/dist/hooks");
-const { getAllowedActions, checkInvariants, executeAction } = require("../lib/dist/actions");
-const { renderMarkdown } = require("../lib/dist/renderer");
-import { AppState } from "./types";
-import { actions } from "./actions";
-import { invariants } from "./invariants";
-import { onboardingWorkflow } from "./workflow";
+import { useState, useEffect, resetHooks } from "x-skills-for-ai/hooks";
+import { getAllowedActions, checkInvariants, executeAction } from "x-skills-for-ai/actions";
+import { renderMarkdown } from "x-skills-for-ai/renderer";
+import { AppState } from "./types.js";
+import { actions } from "./actions.js";
+import { invariants } from "./invariants.js";
+import { onboardingWorkflow } from "./workflow.js";
 import { interpret } from "@xstate/fsm";
 
 type Action = {

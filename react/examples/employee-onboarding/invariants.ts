@@ -1,4 +1,4 @@
-import { AppState } from "./types";
+import { AppState } from "./types.js";
 
 export const invariants = [
   (state: AppState) => {
