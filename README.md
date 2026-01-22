@@ -38,7 +38,8 @@ yarn add ram-ai
 ## Quick Start
 
 ```ts
-import { useState, useEffect, renderMarkdown } from 'ram-ai';
+import { useState, useEffect } from 'ram-ai/hooks';
+import { renderMarkdown } from 'ram-ai/renderer';
 
 function MyAIApp() {
   const [state, setState] = useState({ counter: 0 });
@@ -55,15 +56,15 @@ function MyAIApp() {
     },
   ];
 
-  return renderMarkdown({
-    state,
-    allowedActions: actions,
-    goals: ['Increment the counter'],
-  });
+  const goals = ['Increment the counter'];
+
+  const markdown = renderMarkdown({ state, allowedActions: actions, goals });
+
+  return { markdown, allowedActions: actions, state };
 }
 ```
 
-This renders a Markdown context for AI to interact with.
+This creates an AI-compatible app that returns a Markdown context, current state, and allowed actions for AI interaction.
 
 ---
 
@@ -82,12 +83,6 @@ npm install
 npm run build
 npm start
 ```
-
----
-
-## Documentation
-
-For detailed API reference, hooks, and advanced usage, see [lib/readme.md](lib/readme.md).
 
 ---
 
