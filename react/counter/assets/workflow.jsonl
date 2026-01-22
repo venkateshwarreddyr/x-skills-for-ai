@@ -1,0 +1,4 @@
+{"instruction": "Initialize counter to 0"}
+{"instruction": "Increment counter"}
+{"instruction": "Decrement counter by 1"}
+{"instruction": "Get current count"}
