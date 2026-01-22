@@ -1,5 +1,5 @@
-const { createWorkflow, createRAMApp } = require('../../lib/dist/index.js');
-import type { Action } from '../../lib/dist/index.js';
+const { createWorkflow, createRAMApp } = require('../../lib/src/index.js');
+import type { Action } from '../../lib/src/index.js';
 
 // Define workflow states
 const workflow = createWorkflow({

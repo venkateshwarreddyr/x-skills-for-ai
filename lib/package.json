@@ -4,6 +4,16 @@
   "description": "React-like framework for AI context",
   "main": "src/index.js",
   "types": "src/index.d.ts",
+  "exports": {
+    ".": "./src/index.js",
+    "./types": "./src/types.js",
+    "./hooks": "./src/hooks.js",
+    "./actions": "./src/actions.js",
+    "./renderer": "./src/renderer.js",
+    "./checkpoint": "./src/checkpoint.js",
+    "./workflow": "./src/workflow.js",
+    "./app": "./src/app.js"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",

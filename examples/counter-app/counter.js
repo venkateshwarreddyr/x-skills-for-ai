@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const dist_1 = require("../../lib/dist");
-const dist_2 = require("../../lib/dist");
+const dist_1 = require("../../lib/src");
+const dist_2 = require("../../lib/src");
 // Define actions
 const incrementAction = {
     name: 'Increment',
