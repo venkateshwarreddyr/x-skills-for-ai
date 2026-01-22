@@ -27,7 +27,7 @@ export function createWorkflow(definition: WorkflowDefinition): Workflow {
       throw new Error(`Current state mismatch: expected ${currentState}, got ${current}`);
     }
 
-    const nextState = (machine as any).config.states[current].on?.[actionName];
+    const nextState = (machine as any).states[current].on?.[actionName];
     if (!nextState) {
       throw new Error(`Invalid transition: Action ${actionName} is not allowed in state ${current}`);
     }
