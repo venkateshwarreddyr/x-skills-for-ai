@@ -39,7 +39,11 @@ export type Employee = {
   accounts: Account[];
 };
 
+/**
+ * Application state for employee onboarding.
+ * Workflow phases are simplified to reduce complexity.
+ */
 export type AppState = {
-  workflow: "NEW" | "INCOME_ADDED" | "VERIFIED" | "DOCUMENTS_COLLECTED" | "EQUIPMENT_ASSIGNED" | "TRAINING_COMPLETED" | "MEETINGS_SCHEDULED" | "ACCOUNTS_CREATED" | "COMPLETED";
+  workflow: "START" | "INCOME_READY" | "DOCUMENTS_READY" | "RESOURCES_READY" | "COMPLETED";
   employee: Employee;
 };

@@ -1,44 +1,28 @@
 import { createMachine } from "@xstate/fsm";
 
+/**
+ * Simplified employee onboarding workflow machine.
+ * Groups related activities into logical phases to reduce complexity.
+ */
 export const onboardingWorkflow = createMachine({
-  initial: "NEW",
+  initial: "START",
   states: {
-    NEW: {
+    START: {
       on: {
-        AddIncome: "INCOME_ADDED"
+        VerifyIncome: "INCOME_READY"
       }
     },
-    INCOME_ADDED: {
+    INCOME_READY: {
       on: {
-        VerifyIncome: "VERIFIED"
+        SubmitDocuments: "DOCUMENTS_READY"
       }
     },
-    VERIFIED: {
+    DOCUMENTS_READY: {
       on: {
-        SubmitDocuments: "DOCUMENTS_COLLECTED"
+        MarkResourcesComplete: "RESOURCES_READY"
       }
     },
-    DOCUMENTS_COLLECTED: {
-      on: {
-        AssignEquipment: "EQUIPMENT_ASSIGNED"
-      }
-    },
-    EQUIPMENT_ASSIGNED: {
-      on: {
-        CompleteTraining: "TRAINING_COMPLETED"
-      }
-    },
-    TRAINING_COMPLETED: {
-      on: {
-        ScheduleMeeting: "MEETINGS_SCHEDULED"
-      }
-    },
-    MEETINGS_SCHEDULED: {
-      on: {
-        CreateAccount: "ACCOUNTS_CREATED"
-      }
-    },
-    ACCOUNTS_CREATED: {
+    RESOURCES_READY: {
       on: {
         CompleteOnboarding: "COMPLETED"
       }

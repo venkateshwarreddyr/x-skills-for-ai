@@ -1,10 +1,10 @@
 # RAM - React-like Framework for AI Context
 
-**RAM** is a JavaScript/TypeScript library that allows developers to build **AI-compatible reactive applications**, similar to React, but instead of rendering HTML, it generates **Markdown/JSON context windows** for AI agents.
+**RAM** is a JavaScript/TypeScript library that allows developers to build **AI-compatible reactive applications**, similar to React, but instead of rendering HTML, it generates **Markdown/JSON context** for AI agents.
 
 It supports hooks, actions, invariants, workflows, and integrates with external libraries for building deterministic, AI-operable systems.
 
-> **RAM does for AI what React did for browsers — but at the decision layer, not the view layer.**
+> **RAM does for AI at the decision layer what React did for browsers at the view layer.**
 
 ---
 
@@ -27,7 +27,7 @@ It supports hooks, actions, invariants, workflows, and integrates with external 
 npm install ram-ai
 ```
 
-or in TypeScript project:
+or
 
 ```bash
 yarn add ram-ai
