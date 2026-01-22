@@ -10,7 +10,7 @@ const initialState: TodoState = {
   todos: []
 };
 
-export function TodoApp(action?: Action, payload?: any): { markdown: string; allowedActions: Action[] } {
+export function TodoApp(action?: Action, payload?: any): { markdown: string; allowedActions: Action[]; state: TodoState } {
   resetHooks(TodoApp);
 
   const [state, setState] = useState<TodoState>(initialState);
@@ -44,5 +44,5 @@ export function TodoApp(action?: Action, payload?: any): { markdown: string; all
     goals
   });
 
-  return { markdown, allowedActions };
+  return { markdown, allowedActions, state };
 }

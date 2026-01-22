@@ -8,7 +8,7 @@ Perfect — let’s create a **comprehensive README-style documentation** for bu
 
 It supports:
 
-* Hooks: `useState`, `useEffect` (like React’s `useState`, `useEffect`)
+* Hooks: `useState`, `useEffect`, `useContext`, `useMemo`, `useCallback` (AI-adapted versions)
 * Declarative **actions, invariants, goals**
 * Integration with **Redux** or other JS state management libraries
 * Calling external JS libraries / MCPs safely
@@ -21,12 +21,13 @@ It supports:
 1. [Installation](#installation)
 2. [Core Concepts](#core-concepts)
 3. [Hooks](#hooks)
-4. [Actions & Effects](#actions--effects)
-5. [Invariants & Allowed Actions](#invariants--allowed-actions)
-6. [Rendering AI Context](#rendering-ai-context)
-7. [External Libraries & Redux](#external-libraries--redux)
-8. [Example App](#example-app)
-9. [Best Practices](#best-practices)
+4. [Advanced Hooks for AI Stability](#advanced-hooks-for-ai-stability)
+5. [Actions & Effects](#actions--effects)
+6. [Invariants & Allowed Actions](#invariants--allowed-actions)
+7. [Rendering AI Context](#rendering-ai-context)
+8. [External Libraries & Redux](#external-libraries--redux)
+9. [Example App](#example-app)
+10. [Best Practices](#best-practices)
 
 ---
 
@@ -79,6 +80,58 @@ useEffect(() => {
 
 * Runs side-effects whenever dependencies change
 * Can call MCPs, external JS libraries, or trigger Redux actions
+
+### Advanced Hooks for AI Stability
+
+RAM provides `useContext`, `useMemo`, and `useCallback` to ensure **context stability, safety, and determinism**, not just performance.
+
+#### `useContext`
+
+Shares **global state**, **policies**, **tools**, or **memory** across AIComponents. Avoids prop-drilling context-heavy AI data. Enables **capability-based access** for safety.
+
+```ts
+const AgentContext = createContext<AgentContextType>(defaultValue);
+
+function App() {
+  return (
+    <AgentContext.Provider value={agentConfig}>
+      <EmployeeIncomeAIApp />
+    </AgentContext.Provider>
+  );
+}
+
+function EmployeeIncomeAIApp() {
+  const agent = useContext(AgentContext);
+}
+```
+
+Context changes **must trigger re-render of AI context**. Context is part of **context window**, not just runtime config.
+
+#### `useMemo`
+
+Prevents re-computing **large summaries**. Stabilizes **context output** to reduce token churn. Improves determinism in agent reasoning.
+
+```ts
+const incomeSummary = useMemo(
+  () => summarizeIncomes(state.employee.incomes),
+  [state.employee.incomes]
+);
+```
+
+**Key Difference from React:** Context stability optimization, not performance. Avoid **token noise**. Must be pure.
+
+#### `useCallback`
+
+Actions and effects must have **stable identity**. Prevents accidental re-registration of actions. Enables caching & auditability.
+
+```ts
+const addIncome = useCallback(
+  (payload) => executeAction(AddIncome, payload),
+  []
+);
+```
+
+**Difference from React:** Preserves action identity for safety & traceability, not performance.
 
 ---
 

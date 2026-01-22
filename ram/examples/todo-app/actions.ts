@@ -29,7 +29,7 @@ export const toggleTodo: Action = {
   effects: (state: TodoState, payload: { id: string }) => ({
     ...state,
     todos: state.todos.map(todo =>
-      todo.id === payload.id ? { ...todo, completed: !todo.completed } : todo
+      todo.id === parseInt(payload.id) ? { ...todo, completed: !todo.completed } : todo
     )
   })
 };
@@ -42,7 +42,7 @@ export const deleteTodo: Action = {
   ],
   effects: (state: TodoState, payload: { id: string }) => ({
     ...state,
-    todos: state.todos.filter(todo => todo.id !== payload.id)
+    todos: state.todos.filter(todo => todo.id !== parseInt(payload.id))
   })
 };
 
