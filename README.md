@@ -1,10 +1,10 @@
-# RAM - React-like Framework for AI Context
+# RAM (React-like Framework for AI Context) - Experiments
 
-**RAM** is a JavaScript/TypeScript library that allows developers to build **AI-compatible reactive applications**, similar to React, but instead of rendering HTML, it generates **Markdown/JSON context** for AI agents.
+**RAM** (React-like Framework for AI Context) is a JavaScript/TypeScript library that allows developers to build **AI-compatible reactive applications**, similar to React, but instead of rendering HTML, it generates **Markdown/JSON context** for AI agents.
 
 It supports hooks, actions, invariants, workflows, and integrates with external libraries for building deterministic, AI-operable systems.
 
-> **RAM does for AI at the decision layer what React did for browsers at the view layer.**
+> **RAM does for AI at the decision layer, what React did for browsers the view layer.**
 
 ---
 
@@ -37,9 +37,11 @@ yarn add ram-ai
 
 ## Quick Start
 
-```ts
-import { useState, useEffect } from 'ram-ai/hooks';
-import { renderMarkdown } from 'ram-ai/renderer';
+Create a file named `test.js`:
+
+```js
+const { useState, useEffect } = require('./lib/src/hooks.js');
+const { renderMarkdown } = require('./lib/src/renderer.js');
 
 function MyAIApp() {
   const [state, setState] = useState({ counter: 0 });
@@ -62,9 +64,19 @@ function MyAIApp() {
 
   return { markdown, allowedActions: actions, state };
 }
+
+// Run the app
+const app = MyAIApp();
+console.log(app.markdown);
 ```
 
-This creates an AI-compatible app that returns a Markdown context, current state, and allowed actions for AI interaction.
+Run it with:
+
+```bash
+node test.js
+```
+
+This creates an AI-compatible app that returns a Markdown context, current state, and allowed actions for AI interaction. Note: RAM is a React-like framework for AI context, not for building React applications.
 
 ---
 

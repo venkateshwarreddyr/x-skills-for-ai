@@ -1,29 +1,44 @@
 import { Checkpoint, Action } from './types';
+import localforage from 'localforage';
 
-export class InMemorySaver {
-  private store: Map<string, Checkpoint[]> = new Map();
+export class LocalForageSaver {
+  private store = localforage.createInstance({
+    name: 'ram-checkpoints'
+  });
 
   constructor() {}
 
-  put(threadId: string, checkpoint: Checkpoint): Checkpoint {
-    if (!this.store.has(threadId)) {
-      this.store.set(threadId, []);
-    }
-    this.store.get(threadId)!.push(checkpoint);
+  async put(threadId: string, checkpoint: Checkpoint): Promise<Checkpoint> {
+    const listKey = `${threadId}_list`;
+    const list = (await this.store.getItem<string[]>(listKey)) || [];
+    list.push(checkpoint.id);
+    await this.store.setItem(listKey, list);
+    await this.store.setItem(`${threadId}_${checkpoint.id}`, checkpoint);
     return checkpoint;
   }
 
-  get(threadId: string, checkpointId: string): Checkpoint | null {
-    const list = this.store.get(threadId) ?? [];
-    return list.find((cp) => cp.id === checkpointId) ?? null;
+  async get(threadId: string, checkpointId: string): Promise<Checkpoint | null> {
+    return await this.store.getItem<Checkpoint>(`${threadId}_${checkpointId}`) || null;
   }
 
-  list(threadId: string): Checkpoint[] {
-    return this.store.get(threadId) ?? [];
+  async list(threadId: string): Promise<Checkpoint[]> {
+    const listKey = `${threadId}_list`;
+    const ids = (await this.store.getItem<string[]>(listKey)) || [];
+    const checkpoints: Checkpoint[] = [];
+    for (const id of ids) {
+      const cp = await this.get(threadId, id);
+      if (cp) checkpoints.push(cp);
+    }
+    return checkpoints;
   }
 
-  deleteThread(threadId: string): void {
-    this.store.delete(threadId);
+  async deleteThread(threadId: string): Promise<void> {
+    const listKey = `${threadId}_list`;
+    const ids = (await this.store.getItem<string[]>(listKey)) || [];
+    for (const id of ids) {
+      await this.store.removeItem(`${threadId}_${id}`);
+    }
+    await this.store.removeItem(listKey);
   }
 
   // Async versions

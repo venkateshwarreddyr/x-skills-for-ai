@@ -1,4 +1,4 @@
-import { useState, useEffect, resetHooks } from '../../lib/src';
+import { useState, useEffect, resetHooks } from '../../lib/dist/index.js';
 import { Action, getAllowedActions, checkInvariants, renderMarkdown, executeAction } from '../../lib/src';
 import * as readline from 'readline';
 

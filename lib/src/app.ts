@@ -1,9 +1,7 @@
-import { Action, Invariant, Workflow, StrictModeConfig } from './types';
-import { executeActionStrict } from './actions';
+import { Action, Invariant, StrictModeConfig } from './types';
 import { createCheckpoint } from './checkpoint';
 
 export interface RAMAppConfig {
-  workflow?: Workflow;
   strict?: boolean | StrictModeConfig;
   actions: Action[];
   invariants?: Invariant[];
@@ -17,12 +15,10 @@ export interface RAMApp {
   getState: () => any;
   getAllowedActions: () => Action[];
   render: () => string;
-  getWorkflowState: () => string | undefined;
 }
 
 export function createRAMApp(config: RAMAppConfig): RAMApp {
   const {
-    workflow,
     strict,
     actions,
     invariants = [],
@@ -33,14 +29,8 @@ export function createRAMApp(config: RAMAppConfig): RAMApp {
 
   let currentState = { ...initialState };
 
-  // Set initial workflow state if workflow is provided
-  if (workflow) {
-    currentState.workflowState = workflow.currentState;
-  }
-
   const strictConfig: StrictModeConfig = typeof strict === 'boolean'
     ? {
-        requireWorkflowState: strict,
         requireCheckpointBeforeEffect: strict,
         forbidDynamicActions: strict,
         forbidStateMutationOutsideActions: strict,
@@ -49,10 +39,6 @@ export function createRAMApp(config: RAMAppConfig): RAMApp {
     : strict || {};
 
   function getAllowedActions(): Action[] {
-    if (workflow && strictConfig.requireWorkflowState) {
-      const allowedActionNames = workflow.getAllowedActions(currentState.workflowState);
-      return actions.filter(action => allowedActionNames.includes(action.name));
-    }
     return actions.filter(action => action.requires(currentState));
   }
 
@@ -62,23 +48,17 @@ export function createRAMApp(config: RAMAppConfig): RAMApp {
       throw new Error(`Action ${actionName} not found`);
     }
 
-    let newState: any;
+    // Create checkpoint before action if required
+    if (strictConfig.requireCheckpointBeforeEffect) {
+      createCheckpoint(currentState, `before ${actionName}`, getAllowedActions());
+    }
 
-    if (workflow && strictConfig.requireWorkflowState) {
-      // Strict mode execution
-      newState = executeActionStrict(
-        currentState,
-        action,
-        payload,
-        workflow,
-        actions,
-        invariants,
-        strictConfig,
-        (state, context, allowedActions, metadata) => createCheckpoint(state, context, allowedActions, metadata)
-      );
-    } else {
-      // Regular execution
-      newState = action.effects(currentState, payload);
+    // Execute action effects
+    const newState = action.effects(currentState, payload);
+
+    // Check invariants if required
+    if (strictConfig.requireInvariants && invariants.length > 0) {
+      invariants.forEach(invariant => invariant(newState));
     }
 
     currentState = newState;
@@ -94,15 +74,10 @@ export function createRAMApp(config: RAMAppConfig): RAMApp {
     return { ...currentState };
   }
 
-  function getWorkflowState(): string | undefined {
-    return currentState.workflowState;
-  }
-
   return {
     executeAction,
     getState,
     getAllowedActions,
-    render: () => render(currentState, getAllowedActions()),
-    getWorkflowState
+    render: () => render(currentState, getAllowedActions())
   };
 }
