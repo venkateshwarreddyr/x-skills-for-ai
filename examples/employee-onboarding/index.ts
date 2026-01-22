@@ -1,6 +1,6 @@
 import * as readline from 'readline';
 import { EmployeeOnboardingApp } from './app';
-import { InMemorySaver, createCheckpoint } from '../../lib/src/checkpoint';
+import { InMemorySaver, createCheckpoint } from '../../ram/lib/src/checkpoint';
 
 const saver = new InMemorySaver();
 const threadId = 'onboarding-session';

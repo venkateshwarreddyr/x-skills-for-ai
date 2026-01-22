@@ -1,6 +1,6 @@
-import { useState, useEffect, resetHooks } from "../../lib/src/hooks";
-import { getAllowedActions, checkInvariants, executeAction } from "../../lib/src/actions";
-import { renderMarkdown } from "../../lib/src/renderer";
+import { useState, useEffect, resetHooks } from "../../ram/lib/src/hooks";
+import { getAllowedActions, checkInvariants, executeAction } from "../../ram/lib/src/actions";
+import { renderMarkdown } from "../../ram/lib/src/renderer";
 import { AppState } from "./types";
 import { actions } from "./actions";
 import { invariants } from "./invariants";
