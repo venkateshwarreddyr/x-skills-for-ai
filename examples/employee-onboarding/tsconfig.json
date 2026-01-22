@@ -11,7 +11,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "ram-ai/*": ["../../lib/src/*"]
+      "ram-ai/*": ["../../lib/dist/*"]
     }
   },
   "references": [

@@ -2,22 +2,23 @@
   "name": "ram-ai",
   "version": "1.0.0",
   "description": "React-like framework for AI context",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./src/index.js",
-    "./types": "./src/types.js",
-    "./hooks": "./src/hooks.js",
-    "./actions": "./src/actions.js",
-    "./renderer": "./src/renderer.js",
-    "./checkpoint": "./src/checkpoint.js",
-    "./workflow": "./src/workflow.js",
-    "./app": "./src/app.js"
+    ".": "./dist/index.js",
+    "./types": "./dist/types.js",
+    "./hooks": "./dist/hooks.js",
+    "./actions": "./dist/actions.js",
+    "./renderer": "./dist/renderer.js",
+    "./checkpoint": "./dist/checkpoint.js",
+    "./workflow": "./dist/workflow.js",
+    "./app": "./dist/app.js"
   },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "run-examples": "ts-node runner.ts"
+    "run-examples": "ts-node runner.ts",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "ai",
@@ -27,6 +28,7 @@
   ],
   "author": "",
   "license": "MIT",
+  "files": ["dist/**/*"],
   "devDependencies": {
     "@types/node": "^18.0.0",
     "ts-node": "^10.9.2",
