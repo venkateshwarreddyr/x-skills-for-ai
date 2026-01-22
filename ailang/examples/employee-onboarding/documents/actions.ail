@@ -1,9 +1,0 @@
-action SubmitDocument(employee_id: string, type: string) {
-    requires Document.status == PENDING
-    effect Document.status = SUBMITTED
-}
-
-action VerifyDocument(employee_id: string, type: string) {
-    requires Document.status == SUBMITTED
-    effect Document.status = VERIFIED
-}

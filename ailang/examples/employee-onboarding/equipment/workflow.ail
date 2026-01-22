@@ -1,3 +1,0 @@
-workflow EquipmentWorkflow {
-    PENDING -> AssignEquipment -> ASSIGNED
-}

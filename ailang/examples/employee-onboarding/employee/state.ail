@@ -1,8 +1,0 @@
-state Employee {
-    id: string
-    name: string
-    role: string
-    department: string
-    start_date: date
-    status: NEW | INDUCTION | ACTIVE
-}

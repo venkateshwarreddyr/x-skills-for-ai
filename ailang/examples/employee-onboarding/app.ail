@@ -1,8 +1,0 @@
-import "./employee/*"
-import "./documents/*"
-import "./equipment/*"
-import "./training/*"
-import "./accounts/*"
-import "./meetings/*"
-
-goal "Activate employee"

@@ -1,4 +1,0 @@
-action CompleteMeeting(employee_id: string, type: string) {
-    requires Meeting.status == SCHEDULED
-    effect Meeting.status = COMPLETED
-}

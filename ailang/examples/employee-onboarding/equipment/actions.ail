@@ -1,4 +1,0 @@
-action AssignEquipment(employee_id: string, type: string) {
-    requires Equipment.status == PENDING
-    effect Equipment.status = ASSIGNED
-}

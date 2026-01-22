@@ -1,4 +1,0 @@
-action CreateAccount(employee_id: string, type: string) {
-    requires Account.status == PENDING
-    effect Account.status = CREATED
-}

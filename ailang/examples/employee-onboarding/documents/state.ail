@@ -1,9 +1,0 @@
-state Document {
-    employee_id: string
-    type: ID | NDA | TAX
-    status: PENDING | SUBMITTED | VERIFIED
-}
-
-derived Documents.all_verified {
-    when all Document.status == VERIFIED
-}

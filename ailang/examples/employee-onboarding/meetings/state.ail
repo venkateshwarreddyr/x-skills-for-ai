@@ -1,5 +1,0 @@
-state Meeting {
-    employee_id: string
-    type: WELCOME | ORIENTATION
-    status: SCHEDULED | COMPLETED
-}

@@ -1,9 +1,0 @@
-state Account {
-    employee_id: string
-    type: EMAIL | SYSTEM
-    status: PENDING | CREATED
-}
-
-derived Accounts.all_created {
-    when all Account.status == CREATED
-}

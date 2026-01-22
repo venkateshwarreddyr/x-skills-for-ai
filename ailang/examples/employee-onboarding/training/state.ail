@@ -1,9 +1,0 @@
-state Training {
-    employee_id: string
-    course: string
-    status: PENDING | COMPLETED
-}
-
-derived Training.all_completed {
-    when all Training.status == COMPLETED
-}
