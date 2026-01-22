@@ -1,6 +1,5 @@
 import * as readline from 'readline';
 import { EmployeeOnboardingApp } from './app';
-import { actions } from './actions';
 import { InMemorySaver, createCheckpoint } from '../../lib/src/checkpoint';
 
 const saver = new InMemorySaver();
