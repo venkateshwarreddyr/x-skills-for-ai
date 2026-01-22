@@ -1,6 +1,6 @@
 import * as readline from 'readline';
 import { EmployeeOnboardingApp } from './app';
-import { InMemorySaver, createCheckpoint } from 'x-skills-for-ai/checkpoint';
+const { InMemorySaver, createCheckpoint } = require('../lib/dist/checkpoint');
 
 const saver = new InMemorySaver();
 const threadId = 'onboarding-session';
@@ -40,7 +40,7 @@ async function runApp() {
     if (choice.toLowerCase() === 'checkpoints') {
       const checkpoints = await saver.list(threadId);
       console.log('\nCheckpoints:');
-      checkpoints.forEach((cp, index) => {
+      checkpoints.forEach((cp: any, index: number) => {
         console.log(`${index + 1}. ${cp.id} - ${cp.timestamp} - ${cp.metadata?.action || 'render'}`);
       });
       console.log('Press enter to continue.');

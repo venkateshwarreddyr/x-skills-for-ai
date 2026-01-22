@@ -1,6 +1,6 @@
-import { useState, useEffect, resetHooks } from "x-skills-for-ai/hooks";
-import { getAllowedActions, checkInvariants, executeAction } from "x-skills-for-ai/actions";
-import { renderMarkdown } from "x-skills-for-ai/renderer";
+const { useState, useEffect, resetHooks } = require("../lib/dist/hooks");
+const { getAllowedActions, checkInvariants, executeAction } = require("../lib/dist/actions");
+const { renderMarkdown } = require("../lib/dist/renderer");
 import { AppState } from "./types";
 import { actions } from "./actions";
 import { invariants } from "./invariants";
@@ -91,7 +91,7 @@ ${goals.map(goal => `- ${goal}`).join('\n')}`;
 export function EmployeeOnboardingApp(action?: Action, payload?: any): { markdown: string; allowedActions: Action[]; state: AppState } {
   resetHooks(EmployeeOnboardingApp);
 
-  const [state, setState] = useState<AppState>(initialState);
+  const [state, setState] = useState(initialState);
   const [workflowService] = useState(interpret(onboardingWorkflow).start());
 
   if (action) {

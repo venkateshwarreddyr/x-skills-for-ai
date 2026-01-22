@@ -8,7 +8,8 @@
     "start": "ts-node index.ts"
   },
   "dependencies": {
-    "@xstate/fsm": "^2.1.0"
+    "@xstate/fsm": "^2.1.0",
+    "x-skills-for-ai": "*"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
