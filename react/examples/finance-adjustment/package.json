@@ -1,0 +1,22 @@
+{
+  "name": "ram-finance-adjustment-example",
+  "version": "1.0.0",
+  "description": "Financial adjustment approval workflow example for RAM React framework",
+  "type": "module",
+  "main": "index.ts",
+  "imports": {
+    "#lib/*": "../../lib/src/*"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "x-skills-for-ai": "file:../../lib"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.0"
+  }
+}
