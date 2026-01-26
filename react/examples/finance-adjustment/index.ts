@@ -1,1 +1,1 @@
-export { FinancialAdjustmentApp } from './app';
+export { FinancialAdjustmentApp } from './app.js';

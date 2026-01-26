@@ -27,7 +27,7 @@ RAM solves both.
 
 ## 🔁 How the Flow Works
 
-1. Case enters `OPEN`
+1. Case enters \`OPEN\`
 2. RAM renders decision surface (Markdown)
 3. AI selects **one of the allowed actions**
 4. Runtime enforces validity
@@ -40,31 +40,46 @@ No hallucinated transitions.
 
 ## 🤖 Example AI Decision
 
-```json
+\`\`\`json
 {
   \"action\": \"EscalateToFinanceDirector\",
   \"reasoning\": \"High amount and high risk require senior approval\"
 }
-```
+\`\`\`
 
 If invalid, RAM rejects it **before** state mutation.
+
+## 🚀 Server Mode (New!)
+
+Run the app as an HTTP server for integration with agents/chatbots:
+
+```bash
+cd react/examples/finance-adjustment
+npm install
+npm run server
+```
+
+- GET \`http://localhost:3001/state\` - Get current markdown, state, allowed actions
+- POST \`http://localhost:3001/action\` - \`{ "action": "ActionName", "payload": {} }\`
+
+Perfect for Langchain agents or other AI tools.
 
 ## 📁 Folder structure
 
 ```
 react/examples/
- └── finance-adjustment/
-     ├── index.ts
-     ├── app.ts
-     ├── actions.ts
-     ├── invariants.ts
-     └── README.md
+└── finance-adjustment/
+    ├── index.ts
+    ├── app.ts
+    ├── actions.ts
+    ├── invariants.ts
+    ├── server.ts  ← New!
+    └── README.md
 ```
 
 ## 🎯 When to Use RAM
 
 This pattern excels in:
-
 * Financial operations
 * Trust & safety
 * Incident response
@@ -78,7 +93,7 @@ If correctness matters more than UI, RAM is the right layer.
 > RAM is not an AI framework.
 > It is a **decision surface** for AI and humans to safely share control.
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Original)
 
 ```bash
 cd react/examples/finance-adjustment

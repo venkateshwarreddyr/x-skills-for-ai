@@ -3,8 +3,8 @@ import type { Action } from "x-skills-for-ai/types";
 import { getAllowedActions, checkInvariants, executeAction } from "x-skills-for-ai/actions";
 import { renderMarkdown } from "x-skills-for-ai/renderer";
 
-import { financeActions } from "./actions";
-import { financeInvariants } from "./invariants";
+import { financeActions } from "./actions.js";
+import { financeInvariants } from "./invariants.js";
 
 const initialState = {
   caseId: "FIN-20391",
