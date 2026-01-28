@@ -193,3 +193,73 @@ window.__XSKILLS__.execute("increment")
 4. Skills are **intention-based** and **deterministic**
 5. Easy for developers to integrate into **existing apps**
 6. No DOM hacks or framework coupling in core
+
+## 9. Examples
+
+### [`react-counter`](examples/react-counter/)
+
+Full Vite + React + TypeScript app demonstrating [`xskills-react`](packages/react/).
+
+#### Quickstart
+
+```bash
+# From xskills/ root
+npm install
+npm run build:all
+npm run dev:react-example
+```
+
+Or:
+
+```bash
+cd examples/react-counter
+npm run dev
+```
+
+Open [`http://localhost:3000`](http://localhost:3000)
+
+#### Key Implementation
+
+[`examples/react-counter/src/Counter.tsx`](examples/react-counter/src/Counter.tsx):
+
+```tsx
+import React, { useState } from "react"
+import { useXSkill } from "xskills-react"
+
+export function Counter() {
+  const [count, setCount] = useState(0)
+
+  // Register increment skill
+  useXSkill({
+    id: "increment",
+    description: "Increase counter",
+    handler: () => setCount(c => c + 1)
+  })
+
+  // Register decrement skill
+  useXSkill({
+    id: "decrement",
+    description: "Decrease counter",
+    handler: () => setCount(c => c - 1)
+  })
+
+  return (
+    <div>
+      <h2>Counter: {count}</h2>
+      <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      <button onClick={() => setCount(c => c - 1)}>Decrement</button>
+    </div>
+  )
+}
+```
+
+#### LLM/Automation Test
+
+Browser console or Playwright:
+
+```js
+window.__XSKILLS__.inspect()
+window.__XSKILLS__.execute("increment")
+window.__XSKILLS__.execute("decrement")
+```
+

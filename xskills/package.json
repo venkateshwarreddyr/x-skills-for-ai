@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "examples/*"
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "build:all": "npm run build --workspaces",
-    "dev": "npm run dev --workspaces --if-present"
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:react-example": "npm run dev --workspace=examples/react-counter"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
