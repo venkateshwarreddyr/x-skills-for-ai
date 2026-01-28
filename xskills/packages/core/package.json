@@ -1,6 +1,6 @@
 {
-  "name": "xskills-core",
-  "version": "0.1.0",
+  "name": "@x-skills-for-ai/core",
+  "version": "1.0.0",
   "description": "Framework-agnostic core runtime for registering, executing, and inspecting XSkills in the browser.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

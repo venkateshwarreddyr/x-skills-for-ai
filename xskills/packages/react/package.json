@@ -1,6 +1,6 @@
 {
-  "name": "xskills-react",
-  "version": "0.1.0",
+  "name": "@x-skills-for-ai/react",
+  "version": "1.0.0",
   "description": "React hook for easy integration with xskills-core",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "xskills-core": "^0.1.0"
+    "@x-skills-for-ai/core": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.0",
