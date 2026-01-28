@@ -261,5 +261,40 @@ Browser console or Playwright:
 window.__XSKILLS__.inspect()
 window.__XSKILLS__.execute("increment")
 window.__XSKILLS__.execute("decrement")
+
+## Enterprise Features
+
+XSkills core includes production-grade features:
+
+
+
+### Structured Telemetry
+
+Every execution emits console logs and `CustomEvent('xskills:telemetry')` with skillId, duration, status, actor (from ctx), etc. in [`xskills.runtime.ts`](xskills/packages/core/src/xskills.runtime.ts).
+
+### Skill Versioning
+
+SemVer support (exact, ^major, latest):
+
+```ts
+register({ id: "counter.increment", version: "1.2.3", handler: ... });
+await runtime.execute("counter.increment@latest");
+await runtime.execute("counter.increment@^1");
 ```
+
+### Metadata Inspection
+
+```ts
+const skills = runtime.inspect(); // all skill defs across versions
+```
+
+### Dry-Run / Simulation
+
+Skip handler, emit telemetry:
+
+```ts
+await runtime.execute("counter.increment", ctx, { dryRun: true });
+```
+
+Top 5 roadmap complete. Core ready for enterprise scale, safe AI agents, platform teams.```
 

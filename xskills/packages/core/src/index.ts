@@ -1,8 +1,8 @@
-import { XSkillDefinition } from './types';
+import { XSkillDefinition, ExecutionContext } from './types';
 import { XSkillsRuntime } from './xskills.runtime';
 
 export { XSkillsRuntime };
-export type { XSkillDefinition };
+export type { XSkillDefinition, ExecutionContext };
 
 export function getXSkillsRuntime(): XSkillsRuntime {
   if (typeof window === 'undefined') {
