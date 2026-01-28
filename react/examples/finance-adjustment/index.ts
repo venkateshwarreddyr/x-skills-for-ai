@@ -1,1 +1,0 @@
-export { FinancialAdjustmentApp } from './app.js';

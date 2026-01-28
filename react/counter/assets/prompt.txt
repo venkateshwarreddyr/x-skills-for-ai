@@ -1,1 +1,0 @@
-Manage a counter: use incr() to increase by 1, decr() to decrease by 1 or specify amount, getCount() to retrieve current value.
