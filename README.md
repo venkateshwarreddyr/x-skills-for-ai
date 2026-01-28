@@ -77,7 +77,7 @@ xskills/
 
 ### Public API
 
-[`getXSkillsRuntime()`](packages/core/src/index.ts) and [`XSkillDefinition`](packages/core/src/types.ts)
+[`getXSkillsRuntime()`](xskills/packages/core/src/index.ts) and [`XSkillDefinition`](xskills/packages/core/src/types.ts)
 
 ```ts
 import { getXSkillsRuntime, XSkillDefinition } from "xskills-core"
@@ -198,7 +198,7 @@ window.__XSKILLS__.execute("increment")
 
 ### [`react-counter`](examples/react-counter/)
 
-Full Vite + React + TypeScript app demonstrating [`xskills-react`](packages/react/).
+Full Vite + React + TypeScript app demonstrating [`xskills-react`](xskills/packages/react/).
 
 #### Quickstart
 
