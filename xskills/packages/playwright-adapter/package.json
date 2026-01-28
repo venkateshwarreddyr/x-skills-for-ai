@@ -1,5 +1,5 @@
 {
-  "name": "xskills-playwright",
+  "name": "xskills-playwright-adapter",
   "version": "0.1.0",
   "description": "A thin, deterministic bridge between Playwright and window.__XSKILLS__.",
   "main": "dist/index.js",
