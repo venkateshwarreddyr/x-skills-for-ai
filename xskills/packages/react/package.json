@@ -1,0 +1,33 @@
+{
+  "name": "xskills-react",
+  "version": "0.1.0",
+  "description": "React hook for easy integration with xskills-core",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "xskills-core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.5.4",
+    "rimraf": "^5.0.0"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "xskills",
+    "react",
+    "skills"
+  ],
+  "author": "",
+  "license": "MIT"
+}

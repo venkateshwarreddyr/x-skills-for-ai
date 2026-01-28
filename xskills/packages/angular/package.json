@@ -1,0 +1,33 @@
+{
+  "name": "xskills-angular",
+  "version": "0.1.0",
+  "description": "Angular service for xskills-core integration",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@angular/core": "^17.0.0"
+  },
+  "dependencies": {
+    "xskills-core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@angular/core": "^17.0.0",
+    "typescript": "^5.5.4",
+    "rimraf": "^5.0.0"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "xskills",
+    "angular",
+    "skills"
+  ],
+  "author": "",
+  "license": "MIT"
+}

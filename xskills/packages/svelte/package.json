@@ -1,0 +1,32 @@
+{
+  "name": "xskills-svelte",
+  "version": "0.1.0",
+  "description": "Svelte helper for easy integration with xskills-core",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "svelte": "^4.0.0 || ^5.0.0"
+  },
+  "dependencies": {
+    "xskills-core": "^0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "rimraf": "^5.0.0"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "xskills",
+    "svelte",
+    "skills"
+  ],
+  "author": "",
+  "license": "MIT"
+}

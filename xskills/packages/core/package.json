@@ -1,0 +1,33 @@
+{
+  "name": "xskills-core",
+  "version": "0.1.0",
+  "description": "Framework-agnostic core runtime for registering, executing, and inspecting XSkills in the browser.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [
+    "xskills",
+    "skills",
+    "ai",
+    "llm",
+    "automation",
+    "playwright"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
