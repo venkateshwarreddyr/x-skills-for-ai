@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { XSkillDefinition, getXSkillsRuntime } from 'xskills-core';
+import { XSkillDefinition, getXSkillsRuntime } from '@x-skills-for-ai/core';
 
 /**
  * React hook to register an XSkill with automatic lifecycle management.

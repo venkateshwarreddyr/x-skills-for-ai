@@ -1,5 +1,5 @@
 import { Directive, Input, OnInit, OnDestroy } from '@angular/core';
-import { XSkillDefinition, getXSkillsRuntime } from 'xskills-core';
+import { XSkillDefinition, getXSkillsRuntime } from '@x-skills-for-ai/core';
 
 @Directive({
   selector: '[xSkill]'
