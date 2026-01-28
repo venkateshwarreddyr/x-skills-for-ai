@@ -1,0 +1,31 @@
+{
+  "name": "xskills-playwright",
+  "version": "0.1.0",
+  "description": "A thin, deterministic bridge between Playwright and window.__XSKILLS__.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p ./tsconfig.json",
+    "dev": "tsc -w -p ./tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "xskills",
+    "playwright",
+    "testing",
+    "automation"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@playwright/test": ">=1.41.0",
+    "@x-skills-for-ai/core": ">=1.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.0",
+    "typescript": "^5.5.4",
+    "@playwright/test": "^1.41.0"
+  }
+}
