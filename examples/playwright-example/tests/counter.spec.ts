@@ -1,21 +1,23 @@
-import { test, expect } from "@playwright/test"
-import { executeSkill, inspectSkills } from "@x-skills-for-ai/playwright-adapter"
+import { test as base, expect } from "@playwright/test"
+import { withXSkills } from "@x-skills-for-ai/playwright-adapter"
+
+const test = withXSkills
 
 test("counter works via xskills (no UI clicks)", async ({ page }) => {
   // Load existing react-counter app
   await page.goto("/")
 
   // Ensure runtime + skills exist
-  const skills = await inspectSkills(page)
+  const skills = await page.inspectSkills()
   const ids = skills.map(s => s.id)
 
   expect(ids).toContain("increment")
   expect(ids).toContain("decrement")
 
   // Execute skills directly
-  await executeSkill(page, "increment")
-  await executeSkill(page, "increment")
-  await executeSkill(page, "decrement")
+  await page.executeSkill("increment")
+  await page.executeSkill("increment")
+  await page.executeSkill("decrement")
 
   // Assert final UI state
   const text = await page.locator("[data-testid='count']").textContent()
