@@ -1,0 +1,560 @@
+{
+    "backend_uuid": "06a751a4-0ae4-40fb-af5c-d86019a0b353",
+    "context_uuid": "57aa7e22-f296-483c-80da-c67f5e507c24",
+    "uuid": "804ae06a-f91d-4719-938e-90c5698d98ea",
+    "frontend_context_uuid": "e0d3cd3b-8038-4cb5-9e15-8141167be49b",
+    "frontend_uuid": "804ae06a-f91d-4719-938e-90c5698d98ea",
+    "text": "[{\"step_type\": \"INITIAL_QUERY\", \"content\": {\"query\": \"add to cart, a solar system toy\"}, \"uuid\": \"\"}, {\"step_type\": \"COMET_AGENT_TOOL_INPUT\", \"content\": {\"goal_id\": \"1\", \"tool_input\": {\"navigate\": null, \"read_page\": null, \"form_input\": null, \"computer\": null, \"find\": null, \"get_page_text\": null, \"tabs_create\": null, \"todo_write\": null, \"search_web\": null, \"computer_list\": {\"actions\": [{\"action\": \"left_click\", \"text\": null, \"duration\": null}, {\"action\": \"type\", \"text\": \"solar system toy\", \"duration\": null}], \"uuid\": \"70aa0a0b-3c00-4001-ac46-43ff357f85f4\"}, \"bash\": null, \"file_read\": null, \"file_write\": null, \"file_edit\": null, \"subagent_tool_inputs\": null, \"confirm_action\": null}, \"task_uuid\": \"3a28fe6b-e16c-40da-ae5a-be8857172091\", \"subagent_steps\": {}}, \"uuid\": \"41a5e4fc-8435-474d-9091-b031f7a4c52f\"}, {\"step_type\": \"COMET_AGENT_TOOL_OUTPUT\", \"content\": {\"goal_id\": \"1\", \"tool_output\": {\"enterprise_blocked\": false, \"navigate\": null, \"read_page\": null, \"form_input\": null, \"computer\": {\"error\": false, \"screenshot_uuid\": \"67410d72-716b-42ea-89e6-5bf0b91e9937\", \"screenshots\": [\"https://ppl-ai-agent-screenshots.s3.amazonaws.com/efd29b2c-3454-4c71-b855-402c9ca6e39b_0.png\", \"https://ppl-ai-agent-screenshots.s3.amazonaws.com/efd29b2c-3454-4c71-b855-402c9ca6e39b_1.png\"]}, \"find\": null, \"get_page_text\": null, \"tabs_create\": null, \"todo_write\": null, \"search_web\": null, \"bash\": null, \"file_read\": null, \"file_write\": null, \"file_edit\": null}}, \"uuid\": \"57b8757b-5980-4b85-ae1e-99bb7bcdcfd2\"}, {\"step_type\": \"COMET_AGENT_TOOL_INPUT\", \"content\": {\"goal_id\": \"2\", \"tool_input\": {\"navigate\": null, \"read_page\": null, \"form_input\": null, \"computer\": null, \"find\": null, \"get_page_text\": null, \"tabs_create\": null, \"todo_write\": null, \"search_web\": null, \"computer_list\": {\"actions\": [{\"action\": \"left_click\", \"text\": null, \"duration\": null}], \"uuid\": \"51b57a73-9178-4017-be68-ac165af01627\"}, \"bash\": null, \"file_read\": null, \"file_write\": null, \"file_edit\": null, \"subagent_tool_inputs\": null, \"confirm_action\": null}, \"task_uuid\": \"3a28fe6b-e16c-40da-ae5a-be8857172091\", \"subagent_steps\": {}}, \"uuid\": \"b173c848-cac7-439c-ac17-a530b986ef49\"}, {\"step_type\": \"COMET_AGENT_TOOL_OUTPUT\", \"content\": {\"goal_id\": \"2\", \"tool_output\": {\"enterprise_blocked\": false, \"navigate\": null, \"read_page\": null, \"form_input\": null, \"computer\": {\"error\": false, \"screenshot_uuid\": \"8c4bba24-d8d6-4cae-b2e3-1c25da2af3da\", \"screenshots\": [\"https://ppl-ai-agent-screenshots.s3.amazonaws.com/f6fd3d49-9fd1-48f2-8ae8-9eae57f4b76f_1.png\"]}, \"find\": null, \"get_page_text\": null, \"tabs_create\": null, \"todo_write\": null, \"search_web\": null, \"bash\": null, \"file_read\": null, \"file_write\": null, \"file_edit\": null}}, \"uuid\": \"af36b486-d944-4a3b-ab6f-a4b80534e60a\"}, {\"step_type\": \"COMET_AGENT_TOOL_INPUT\", \"content\": {\"goal_id\": \"3\", \"tool_input\": {\"navigate\": null, \"read_page\": null, \"form_input\": null, \"computer\": null, \"find\": null, \"get_page_text\": null, \"tabs_create\": null, \"todo_write\": null, \"search_web\": null, \"computer_list\": {\"actions\": [{\"action\": \"left_click\", \"text\": null, \"duration\": null}], \"uuid\": \"db3d6db8-01e2-4ff6-9aa0-b04aafe648e5\"}, \"bash\": null, \"file_read\": null, \"file_write\": null, \"file_edit\": null, \"subagent_tool_inputs\": null, \"confirm_action\": null}, \"task_uuid\": \"3a28fe6b-e16c-40da-ae5a-be8857172091\", \"subagent_steps\": {}}, \"uuid\": \"b30bfaa4-23b9-4e03-8273-23a797eb0dd9\"}, {\"step_type\": \"COMET_AGENT_TOOL_OUTPUT\", \"content\": {\"goal_id\": \"3\", \"tool_output\": {\"enterprise_blocked\": false, \"navigate\": null, \"read_page\": null, \"form_input\": null, \"computer\": {\"error\": false, \"screenshot_uuid\": \"a8cfed29-c944-49a9-9279-b2e2f19faae4\", \"screenshots\": [\"https://ppl-ai-agent-screenshots.s3.amazonaws.com/b433df8c-d265-4c6d-a2d2-fd9f5bed5e78_1.png\"]}, \"find\": null, \"get_page_text\": null, \"tabs_create\": null, \"todo_write\": null, \"search_web\": null, \"bash\": null, \"file_read\": null, \"file_write\": null, \"file_edit\": null}}, \"uuid\": \"3d2880f1-37a3-403c-8595-3ecf81a4fecb\"}, {\"step_type\": \"COMET_AGENT_TOOL_INPUT\", \"content\": {\"goal_id\": \"4\", \"tool_input\": {\"navigate\": null, \"read_page\": null, \"form_input\": null, \"computer\": null, \"find\": null, \"get_page_text\": null, \"tabs_create\": null, \"todo_write\": null, \"search_web\": null, \"computer_list\": {\"actions\": [{\"action\": \"left_click\", \"text\": null, \"duration\": null}], \"uuid\": \"1a611f1f-1dc6-450a-9adf-069a9abaeb37\"}, \"bash\": null, \"file_read\": null, \"file_write\": null, \"file_edit\": null, \"subagent_tool_inputs\": null, \"confirm_action\": null}, \"task_uuid\": \"3a28fe6b-e16c-40da-ae5a-be8857172091\", \"subagent_steps\": {}}, \"uuid\": \"3267a1ba-0b24-4d80-bbdf-c62f39129e32\"}, {\"step_type\": \"COMET_AGENT_TOOL_OUTPUT\", \"content\": {\"goal_id\": \"4\", \"tool_output\": {\"enterprise_blocked\": false, \"navigate\": null, \"read_page\": null, \"form_input\": null, \"computer\": {\"error\": false, \"screenshot_uuid\": \"93acc5fd-ff27-430f-b383-481ad8a802e5\", \"screenshots\": [\"https://ppl-ai-agent-screenshots.s3.amazonaws.com/9c114203-dace-4627-ba85-81dec1e6dd30_1.png\"]}, \"find\": null, \"get_page_text\": null, \"tabs_create\": null, \"todo_write\": null, \"search_web\": null, \"bash\": null, \"file_read\": null, \"file_write\": null, \"file_edit\": null}}, \"uuid\": \"f2b846d7-be4e-45b9-99aa-3c8241f4fcb5\"}, {\"step_type\": \"FINAL\", \"content\": {\"answer\": \"{\\\"answer\\\": \\\"Perfect! The solar system toy has been successfully added to your cart. I can see the confirmation message \\\\\\\"Added to cart\\\\\\\" with the product details showing \\\\\\\"Style Name: Solar System\\\\\\\". The cart subtotal is \\\\u20b9998.99.\\\\n\\\\nThe product (Smartivity DIY Solar System Kit) is now in your cart and ready for checkout whenever you're ready to purchase.[1]\\\", \\\"web_results\\\": [{\\\"name\\\": \\\"Amazon.in Shopping Cart\\\", \\\"snippet\\\": \\\"\\\", \\\"timestamp\\\": \\\"\\\", \\\"url\\\": \\\"https://www.amazon.in/cart/smart-wagon?newItems=fe68746d-c022-45bb-8071-b1dd7e60389c,1&ref_=sw_refresh\\\", \\\"meta_data\\\": null, \\\"file_metadata\\\": null, \\\"is_attachment\\\": false, \\\"is_image\\\": false, \\\"is_code_interpreter\\\": false, \\\"is_knowledge_card\\\": false, \\\"is_navigational\\\": false, \\\"is_widget\\\": false, \\\"sitelinks\\\": null, \\\"is_focused_web\\\": false, \\\"is_client_context\\\": true, \\\"inline_entity_id\\\": null, \\\"is_memory\\\": false, \\\"is_conversation_history\\\": false, \\\"tab_id\\\": null, \\\"is_scrubbed\\\": null}], \\\"chunks\\\": [\\\"Perfect! The solar system toy has been successfully added to your cart. I can see the confirmation message \\\\\\\"Added to cart\\\\\\\" with the product details showing \\\\\\\"Style Name: Solar System\\\\\\\". The cart subtotal is \\\\u20b9998.99.\\\\n\\\\nThe product (Smartivity DIY Solar System Kit) is now in your cart and ready for checkout whenever you're ready to purch\\\", \\\"ase.[1]\\\"], \\\"extra_web_results\\\": [], \\\"structured_answer\\\": [{\\\"type\\\": \\\"markdown\\\", \\\"text\\\": \\\"Perfect! The solar system toy has been successfully added to your cart. I can see the confirmation message \\\\\\\"Added to cart\\\\\\\" with the product details showing \\\\\\\"Style Name: Solar System\\\\\\\". The cart subtotal is \\\\u20b9998.99.\\\\n\\\\nThe product (Smartivity DIY Solar System Kit) is now in your cart and ready for checkout whenever you're ready to purchase.[1]\\\", \\\"chunks\\\": [\\\"Perfect! The solar system toy has been successfully added to your cart. I can see the confirmation message \\\\\\\"Added to cart\\\\\\\" with the product details showing \\\\\\\"Style Name: Solar System\\\\\\\". The cart subtotal is \\\\u20b9998.99.\\\\n\\\\nThe product (Smartivity DIY Solar System Kit) is now in your cart and ready for checkout whenever you're ready to purchase.[1]\\\"], \\\"images\\\": [], \\\"inline_token_annotations\\\": []}]}\"}, \"uuid\": \"\"}]",
+    "thread_title": "add to cart, a solar system toy",
+    "related_queries": [],
+    "display_model": "comet_browser_agent",
+    "user_selected_model": "turbo",
+    "personalized": true,
+    "mode": "COPILOT",
+    "query_str": "add to cart, a solar system toy",
+    "search_focus": "internet",
+    "source": "entropy",
+    "attachments": [],
+    "updated_datetime": "2026-01-23T14:08:44.973473",
+    "read_write_token": "07244676-8ce6-41a8-ab36-bc928b22222b",
+    "is_pro_reasoning_mode": false,
+    "step_type": "FINAL",
+    "author_id": "f27bf52e-1b63-4b45-aa6a-98cd61f16671",
+    "author_username": "venkateshw51001",
+    "bookmark_state": "NOT_BOOKMARKED",
+    "s3_social_preview_url": "https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png",
+    "thread_access": 1,
+    "thread_url_slug": "add-to-cart-a-solar-system-toy-BqdRpArkQPuvXNhgGaCzUw",
+    "prompt_source": "user",
+    "query_source": "sidecar",
+    "plan": {
+        "goals": [
+            {
+                "id": "0",
+                "description": "Preparing to assist you",
+                "final": true,
+                "todo_task_status": "INCOMPLETE"
+            },
+            {
+                "id": "1",
+                "description": "Searching for solar system toy",
+                "final": true,
+                "todo_task_status": "INCOMPLETE"
+            },
+            {
+                "id": "2",
+                "description": "Selecting solar system toy search",
+                "final": true,
+                "todo_task_status": "INCOMPLETE"
+            },
+            {
+                "id": "3",
+                "description": "Viewing solar system toy details",
+                "final": true,
+                "todo_task_status": "INCOMPLETE"
+            },
+            {
+                "id": "4",
+                "description": "Adding solar system toy to cart",
+                "final": true,
+                "todo_task_status": "INCOMPLETE"
+            },
+            {
+                "id": "5",
+                "description": "Solar system toy added to cart",
+                "final": true,
+                "todo_task_status": "INCOMPLETE"
+            }
+        ],
+        "final": true
+    },
+    "expiry_time": "2026-02-22T14:08:44.866228",
+    "gpt4": false,
+    "sources": {
+        "sources": [
+            "web"
+        ]
+    },
+    "text_completed": true,
+    "entry_updated_datetime": "2026-01-23T14:08:44.866738+00:00",
+    "blocks": [
+        {
+            "intended_usage": "plan",
+            "plan_block": {
+                "progress": "DONE",
+                "goals": [
+                    {
+                        "id": "0",
+                        "description": "Preparing to assist you",
+                        "final": true,
+                        "todo_task_status": "INCOMPLETE"
+                    },
+                    {
+                        "id": "1",
+                        "description": "Searching for solar system toy",
+                        "final": true,
+                        "todo_task_status": "INCOMPLETE"
+                    },
+                    {
+                        "id": "2",
+                        "description": "Selecting solar system toy search",
+                        "final": true,
+                        "todo_task_status": "INCOMPLETE"
+                    },
+                    {
+                        "id": "3",
+                        "description": "Viewing solar system toy details",
+                        "final": true,
+                        "todo_task_status": "INCOMPLETE"
+                    },
+                    {
+                        "id": "4",
+                        "description": "Adding solar system toy to cart",
+                        "final": true,
+                        "todo_task_status": "INCOMPLETE"
+                    },
+                    {
+                        "id": "5",
+                        "description": "Solar system toy added to cart",
+                        "final": true,
+                        "todo_task_status": "INCOMPLETE"
+                    }
+                ],
+                "final": true
+            }
+        },
+        {
+            "intended_usage": "pro_search_steps",
+            "plan_block": {
+                "progress": "DONE",
+                "goals": [],
+                "steps": [
+                    {
+                        "uuid": "",
+                        "step_type": "INITIAL_QUERY",
+                        "initial_query_content": {
+                            "query": "add to cart, a solar system toy"
+                        }
+                    },
+                    {
+                        "uuid": "41a5e4fc-8435-474d-9091-b031f7a4c52f",
+                        "step_type": "COMET_AGENT_TOOL_INPUT",
+                        "comet_agent_tool_input_content": {
+                            "goal_id": "1",
+                            "tool_input": {
+                                "computer_list": {
+                                    "actions": [
+                                        {
+                                            "action": "left_click"
+                                        },
+                                        {
+                                            "action": "type",
+                                            "text": "solar system toy"
+                                        }
+                                    ],
+                                    "uuid": "70aa0a0b-3c00-4001-ac46-43ff357f85f4"
+                                }
+                            },
+                            "task_uuid": "3a28fe6b-e16c-40da-ae5a-be8857172091",
+                            "subagent_steps": {}
+                        }
+                    },
+                    {
+                        "uuid": "57b8757b-5980-4b85-ae1e-99bb7bcdcfd2",
+                        "step_type": "COMET_AGENT_TOOL_OUTPUT",
+                        "comet_agent_tool_output_content": {
+                            "goal_id": "1",
+                            "tool_output": {
+                                "enterprise_blocked": false,
+                                "computer": {
+                                    "error": false,
+                                    "screenshot_uuid": "67410d72-716b-42ea-89e6-5bf0b91e9937",
+                                    "screenshots": [
+                                        "https://ppl-ai-agent-screenshots.s3.amazonaws.com/efd29b2c-3454-4c71-b855-402c9ca6e39b_0.png",
+                                        "https://ppl-ai-agent-screenshots.s3.amazonaws.com/efd29b2c-3454-4c71-b855-402c9ca6e39b_1.png"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "uuid": "b173c848-cac7-439c-ac17-a530b986ef49",
+                        "step_type": "COMET_AGENT_TOOL_INPUT",
+                        "comet_agent_tool_input_content": {
+                            "goal_id": "2",
+                            "tool_input": {
+                                "computer_list": {
+                                    "actions": [
+                                        {
+                                            "action": "left_click"
+                                        }
+                                    ],
+                                    "uuid": "51b57a73-9178-4017-be68-ac165af01627"
+                                }
+                            },
+                            "task_uuid": "3a28fe6b-e16c-40da-ae5a-be8857172091",
+                            "subagent_steps": {}
+                        }
+                    },
+                    {
+                        "uuid": "af36b486-d944-4a3b-ab6f-a4b80534e60a",
+                        "step_type": "COMET_AGENT_TOOL_OUTPUT",
+                        "comet_agent_tool_output_content": {
+                            "goal_id": "2",
+                            "tool_output": {
+                                "enterprise_blocked": false,
+                                "computer": {
+                                    "error": false,
+                                    "screenshot_uuid": "8c4bba24-d8d6-4cae-b2e3-1c25da2af3da",
+                                    "screenshots": [
+                                        "https://ppl-ai-agent-screenshots.s3.amazonaws.com/f6fd3d49-9fd1-48f2-8ae8-9eae57f4b76f_1.png"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "uuid": "b30bfaa4-23b9-4e03-8273-23a797eb0dd9",
+                        "step_type": "COMET_AGENT_TOOL_INPUT",
+                        "comet_agent_tool_input_content": {
+                            "goal_id": "3",
+                            "tool_input": {
+                                "computer_list": {
+                                    "actions": [
+                                        {
+                                            "action": "left_click"
+                                        }
+                                    ],
+                                    "uuid": "db3d6db8-01e2-4ff6-9aa0-b04aafe648e5"
+                                }
+                            },
+                            "task_uuid": "3a28fe6b-e16c-40da-ae5a-be8857172091",
+                            "subagent_steps": {}
+                        }
+                    },
+                    {
+                        "uuid": "3d2880f1-37a3-403c-8595-3ecf81a4fecb",
+                        "step_type": "COMET_AGENT_TOOL_OUTPUT",
+                        "comet_agent_tool_output_content": {
+                            "goal_id": "3",
+                            "tool_output": {
+                                "enterprise_blocked": false,
+                                "computer": {
+                                    "error": false,
+                                    "screenshot_uuid": "a8cfed29-c944-49a9-9279-b2e2f19faae4",
+                                    "screenshots": [
+                                        "https://ppl-ai-agent-screenshots.s3.amazonaws.com/b433df8c-d265-4c6d-a2d2-fd9f5bed5e78_1.png"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "uuid": "3267a1ba-0b24-4d80-bbdf-c62f39129e32",
+                        "step_type": "COMET_AGENT_TOOL_INPUT",
+                        "comet_agent_tool_input_content": {
+                            "goal_id": "4",
+                            "tool_input": {
+                                "computer_list": {
+                                    "actions": [
+                                        {
+                                            "action": "left_click"
+                                        }
+                                    ],
+                                    "uuid": "1a611f1f-1dc6-450a-9adf-069a9abaeb37"
+                                }
+                            },
+                            "task_uuid": "3a28fe6b-e16c-40da-ae5a-be8857172091",
+                            "subagent_steps": {}
+                        }
+                    },
+                    {
+                        "uuid": "f2b846d7-be4e-45b9-99aa-3c8241f4fcb5",
+                        "step_type": "COMET_AGENT_TOOL_OUTPUT",
+                        "comet_agent_tool_output_content": {
+                            "goal_id": "4",
+                            "tool_output": {
+                                "enterprise_blocked": false,
+                                "computer": {
+                                    "error": false,
+                                    "screenshot_uuid": "93acc5fd-ff27-430f-b383-481ad8a802e5",
+                                    "screenshots": [
+                                        "https://ppl-ai-agent-screenshots.s3.amazonaws.com/9c114203-dace-4627-ba85-81dec1e6dd30_1.png"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "final": true
+            }
+        },
+        {
+            "intended_usage": "ask_text_0_markdown",
+            "markdown_block": {
+                "progress": "DONE",
+                "chunks": [
+                    "Perfect! The solar system toy has been successfully added to your cart. I can see the confirmation message \"Added to cart\" with the product details showing \"Style Name: Solar System\". The cart subtotal is \u20b9998.99.\n\nThe product (Smartivity DIY Solar System Kit) is now in your cart and ready for checkout whenever you're ready to purchase.[1]"
+                ],
+                "chunk_starting_offset": 0,
+                "answer": "Perfect! The solar system toy has been successfully added to your cart. I can see the confirmation message \"Added to cart\" with the product details showing \"Style Name: Solar System\". The cart subtotal is \u20b9998.99.\n\nThe product (Smartivity DIY Solar System Kit) is now in your cart and ready for checkout whenever you're ready to purchase.[1]",
+                "inline_token_annotations": []
+            }
+        },
+        {
+            "intended_usage": "ask_text",
+            "markdown_block": {
+                "progress": "DONE",
+                "chunks": [
+                    "Perfect! The solar system toy has been successfully added to your cart. I can see the confirmation message \"Added to cart\" with the product details showing \"Style Name: Solar System\". The cart subtotal is \u20b9998.99.\n\nThe product (Smartivity DIY Solar System Kit) is now in your cart and ready for checkout whenever you're ready to purch",
+                    "ase.[1]"
+                ],
+                "chunk_starting_offset": 0,
+                "answer": "Perfect! The solar system toy has been successfully added to your cart. I can see the confirmation message \"Added to cart\" with the product details showing \"Style Name: Solar System\". The cart subtotal is \u20b9998.99.\n\nThe product (Smartivity DIY Solar System Kit) is now in your cart and ready for checkout whenever you're ready to purchase.[1]"
+            }
+        },
+        {
+            "intended_usage": "web_results",
+            "web_result_block": {
+                "progress": "DONE",
+                "web_results": [
+                    {
+                        "name": "Amazon.in Shopping Cart",
+                        "snippet": "",
+                        "timestamp": "",
+                        "url": "https://www.amazon.in/cart/smart-wagon?newItems=fe68746d-c022-45bb-8071-b1dd7e60389c,1&ref_=sw_refresh",
+                        "is_attachment": false,
+                        "is_image": false,
+                        "is_code_interpreter": false,
+                        "is_knowledge_card": false,
+                        "is_navigational": false,
+                        "is_widget": false,
+                        "is_focused_web": false,
+                        "is_client_context": true,
+                        "is_memory": false,
+                        "is_conversation_history": false
+                    }
+                ]
+            }
+        },
+        {
+            "intended_usage": "answer_tabs",
+            "answer_tabs_block": {
+                "modes": [
+                    {
+                        "answer_mode_type": "ANSWER"
+                    },
+                    {
+                        "answer_mode_type": "IMAGE"
+                    },
+                    {
+                        "answer_mode_type": "VIDEO"
+                    },
+                    {
+                        "answer_mode_type": "SOURCES"
+                    }
+                ],
+                "reformulated_queries": []
+            }
+        },
+        {
+            "intended_usage": "sources_answer_mode",
+            "sources_mode_block": {
+                "answer_mode_type": "SOURCES",
+                "progress": "DONE",
+                "web_results": [
+                    {
+                        "name": "Amazon.in Shopping Cart",
+                        "snippet": "",
+                        "timestamp": "",
+                        "url": "https://www.amazon.in/cart/smart-wagon?newItems=fe68746d-c022-45bb-8071-b1dd7e60389c,1&ref_=sw_refresh",
+                        "is_attachment": false,
+                        "is_image": false,
+                        "is_code_interpreter": false,
+                        "is_knowledge_card": false,
+                        "is_navigational": false,
+                        "is_widget": false,
+                        "is_focused_web": false,
+                        "is_client_context": true,
+                        "is_memory": false,
+                        "is_conversation_history": false
+                    }
+                ],
+                "result_count": 1,
+                "rows": [
+                    {
+                        "web_result": {
+                            "name": "Amazon.in Shopping Cart",
+                            "snippet": "",
+                            "timestamp": "",
+                            "url": "https://www.amazon.in/cart/smart-wagon?newItems=fe68746d-c022-45bb-8071-b1dd7e60389c,1&ref_=sw_refresh",
+                            "is_attachment": false,
+                            "is_image": false,
+                            "is_code_interpreter": false,
+                            "is_knowledge_card": false,
+                            "is_navigational": false,
+                            "is_widget": false,
+                            "is_focused_web": false,
+                            "is_client_context": true,
+                            "is_memory": false,
+                            "is_conversation_history": false
+                        },
+                        "status": "SELECTED",
+                        "citation": 1
+                    }
+                ]
+            }
+        }
+    ],
+    "message_mode": "FULL",
+    "access_level": "PRIVATE_READ",
+    "answer_modes": [
+        {
+            "answer_mode_type": "SEARCH",
+            "has_preview": false
+        },
+        {
+            "answer_mode_type": "IMAGE",
+            "has_preview": true
+        },
+        {
+            "answer_mode_type": "SOURCES"
+        }
+    ],
+    "structured_answer_block_usages": [
+        "ask_text_0_markdown"
+    ],
+    "reconnectable": false,
+    "cursor": "0697380e-d10a-759e-8000-4f9449d19447",
+    "classifier_results": {
+        "personal_search": true,
+        "skip_search": false,
+        "widget_type": "GENERAL",
+        "hide_nav": false,
+        "hide_sources": false,
+        "image_generation": false,
+        "time_widget": false,
+        "mhe_predictions": {
+            "skip_search": false,
+            "image_generation_intent": false,
+            "time_widget": false,
+            "sports_intent": false,
+            "places_search_intent": false,
+            "shopping_intent": true,
+            "movie_lists_intent": false,
+            "image_preview": true,
+            "video_preview": true,
+            "nav_intent": false,
+            "personal_search": true,
+            "weather_widget": false,
+            "finance_widget_gating": false,
+            "calculator_widget": false,
+            "comet_nav_widget": false,
+            "comet_nav_widget_combined_target": false
+        },
+        "mhe_predictions_full": {
+            "skip_search": {
+                "is_true": false
+            },
+            "image_generation_intent": {
+                "is_true": false,
+                "probability": 0.091308594,
+                "threshold": 0.98
+            },
+            "time_widget": {
+                "is_true": false,
+                "probability": 0.0011367798,
+                "threshold": 0.8
+            },
+            "sports_intent": {
+                "is_true": false,
+                "probability": 0.00033569336,
+                "threshold": 0.701
+            },
+            "places_search_intent": {
+                "is_true": false,
+                "probability": 0.68359375,
+                "threshold": 0.85
+            },
+            "shopping_intent": {
+                "is_true": true,
+                "probability": 0.9609375,
+                "threshold": 0.7
+            },
+            "movie_lists_intent": {
+                "is_true": false,
+                "probability": 0.0061035156,
+                "threshold": 0.65
+            },
+            "image_preview": {
+                "is_true": true,
+                "probability": 0.55859375,
+                "threshold": 0.42
+            },
+            "video_preview": {
+                "is_true": true,
+                "probability": 0.55078125,
+                "threshold": 0.5
+            },
+            "nav_intent": {
+                "is_true": false,
+                "probability": 0.006286621,
+                "threshold": 0.5
+            },
+            "personal_search": {
+                "is_true": true
+            },
+            "skip_personal_search": {
+                "is_true": false,
+                "probability": 0.02331543,
+                "threshold": 0.95
+            },
+            "weather_widget": {
+                "is_true": false,
+                "probability": 0.0024719238,
+                "threshold": 0.4
+            },
+            "finance_widget_gating": {
+                "is_true": false,
+                "probability": 0.012023926,
+                "threshold": 0.53
+            },
+            "calculator_widget": {
+                "is_true": false,
+                "probability": 0.0017547607,
+                "threshold": 0.3
+            },
+            "comet_nav_widget": {
+                "is_true": false,
+                "probability": 0.10253906,
+                "threshold": 0.2
+            },
+            "comet_nav_widget_combined_target": {
+                "is_true": false,
+                "probability": 0.44335938,
+                "threshold": 0.5
+            },
+            "domain_subdomain": {
+                "label": "CONSUMER_GOODS/TOYS",
+                "probability": 0.93359375
+            }
+        }
+    },
+    "search_implementation_mode": "multi_step",
+    "updated_memory_data": {
+        "updated_memories": [],
+        "show_simplified_widget": true
+    },
+    "query_language": "en",
+    "has_expired_attachments": false,
+    "status": "COMPLETED",
+    "final": true,
+    "_extras": {
+        "next": null,
+        "country": "IN",
+        "subdomain": null,
+        "pro_search_mode": "pro",
+        "core_elapsed": 28.273489235900342
+    },
+    "final_sse_message": true
+}
