@@ -41,7 +41,7 @@ jobs:
 
       - name: Build example (user/org page)
         working-directory: ./examples/react-counter
-        run: npx vite build --base="/ram-exp/"
+        run: npx vite build --base="/xskills/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
