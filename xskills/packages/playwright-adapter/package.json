@@ -32,7 +32,6 @@
   },
   "devDependencies": {
     "rimraf": "^5.0.0",
-    "typescript": "^5.5.4",
-    "@playwright/test": "^1.41.0"
+    "typescript": "^5.5.4"
   }
 }
