@@ -1,17 +1,15 @@
 import type { Page } from '@playwright/test'
+import type { ExecutionContext, XSkillDefinition } from '@x-skills-for-ai/core'
 
-declare module '@playwright/test' {
-  interface Page {
-    executeSkill: (
-      skillId: string,
-      payload?: unknown
-    ) => Promise<void>
+type InspectSkill = Pick<XSkillDefinition, 'id' | 'description'>
 
-    inspectSkills: () => Promise<{
-      id: string
-      description?: string
-    }[]>
-  }
+export type XSkillsPage = Page & {
+  executeSkill: (
+    skillId: string,
+    payload?: ExecutionContext
+  ) => Promise<void>;
+
+  inspectSkills: () => Promise<InspectSkill[]>;
 }
 
 // This file only provides type augmentation. Implementation is attached at runtime

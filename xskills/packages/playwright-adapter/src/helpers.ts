@@ -1,9 +1,11 @@
 import type { Page } from '@playwright/test'
+import type { ExecutionContext } from '@x-skills-for-ai/core'
+import type { XSkillsPage } from './types'
 
-export function attachXSkills(page: Page) {
-  page.executeSkill = async function (skillId: string, payload?: unknown) {
+export function attachXSkills(page: Page): asserts page is XSkillsPage {
+  const executeSkill: XSkillsPage['executeSkill'] = async function (this: Page, skillId: string, payload?: ExecutionContext) {
     return this.evaluate(
-      ({ skillId, payload }: { skillId: string; payload: unknown }) => {
+      ({ skillId, payload }: { skillId: string; payload: ExecutionContext | undefined }) => {
         if (!(window as any).__XSKILLS__) {
           throw new Error(`XSkills runtime not found while executing skill: ${skillId}`)
         }
@@ -13,7 +15,9 @@ export function attachXSkills(page: Page) {
     )
   }
 
-  page.inspectSkills = async function () {
+  ;(page as any).executeSkill = executeSkill
+
+  const inspectSkills: XSkillsPage['inspectSkills'] = async function (this: Page) {
     return this.evaluate(() => {
       if (!(window as any).__XSKILLS__) {
         return []
@@ -21,4 +25,6 @@ export function attachXSkills(page: Page) {
       return (window as any).__XSKILLS__.inspect()
     })
   }
+
+  ;(page as any).inspectSkills = inspectSkills
 }

@@ -1,14 +1,13 @@
-import type { Page } from '@playwright/test'
+import type { XSkillsPage } from './types'
 import { test as base } from '@playwright/test'
-import './types'
 import { attachXSkills } from './helpers'
 
 export { attachXSkills }
 
-export const withXSkills = base.extend<{ page: Page }>({
+export const withXSkills = base.extend<{ page: XSkillsPage }>({
   page: async (
-    { page }: { page: Page },
-    use: (page: Page) => Promise<void>
+    { page }: { page: XSkillsPage },
+    use: (page: XSkillsPage) => Promise<void>
   ) => {
     attachXSkills(page)
     await use(page)
