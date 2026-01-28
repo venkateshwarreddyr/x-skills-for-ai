@@ -1,4 +1,4 @@
-# xskills-playwright
+# @x-skills-for-ai/playwright-adapter
 
 A thin, deterministic bridge between Playwright and `window.__XSKILLS__`.
 
@@ -7,7 +7,7 @@ Not a test framework. Not a selector abstraction. Not AI magic.
 ## Install
 
 ```bash
-npm i -D xskills-playwright @playwright/test
+npm i -D @x-skills-for-ai/playwright-adapter @playwright/test
 ```
 
 Peer dependency: `@x-skills-for-ai/core` (your app provides the runtime in the browser)
@@ -27,7 +27,7 @@ await page.inspectSkills(): Promise<{ id: string; description?: string }[]>
 
 ```ts
 // tests/example.spec.ts
-import { withXSkills } from 'xskills-playwright'
+import { withXSkills } from '@x-skills-for-ai/playwright-adapter'
 
 const test = withXSkills
 const { expect } = test
@@ -42,7 +42,7 @@ test('increments counter via skill', async ({ page }) => {
 
 ```ts
 import { test as base } from '@playwright/test'
-import { attachXSkills } from 'xskills-playwright'
+import { attachXSkills } from '@x-skills-for-ai/playwright-adapter'
 
 export const test = base.extend({
   page: async ({ page }, use) => {
