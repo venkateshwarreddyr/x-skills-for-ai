@@ -5,8 +5,8 @@ const test = withXSkills
 
 test("counter works via xskills (no UI clicks)", async ({ page }) => {
   // Load existing react-counter app
-  await page.goto("/")
-
+  await page.goto("/example-app-with-x-skills-for-ai/")
+  await page.waitForSelector("[data-testid='count']")
   // Ensure runtime + skills exist
   const skills = await page.inspectSkills()
   const ids = skills.map(s => s.id)
