@@ -1,4 +1,4 @@
-import { XSkillDefinition, ExecutionContext } from './types';
+import { XSkillDefinition, Params, ExecutionContext } from './types';
 
 export class XSkillsRuntime {
   private skills: Map<string, XSkillDefinition> = new Map();
@@ -14,7 +14,7 @@ export class XSkillsRuntime {
     };
   }
 
-  async execute(id: string, ctx?: ExecutionContext): Promise<void> {
+  async execute(id: string, input?: Params, ctx?: ExecutionContext): Promise<void> {
     const skill = this.skills.get(id);
     if (!skill) {
       const available = Array.from(this.skills.keys()).join(', ');
@@ -28,7 +28,7 @@ export class XSkillsRuntime {
     };
 
     try {
-      await skill.handler();
+      await skill.handler(input);
       const endTime = Date.now();
       const duration = endTime - startTime;
       const eventData = {

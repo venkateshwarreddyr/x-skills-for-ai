@@ -18,12 +18,12 @@ const runtime = getXSkillsRuntime();
 const unregister = runtime.register({
   id: 'example',
   description: 'Example skill',
-  handler: async () => {
-    console.log('Executed!');
+  handler: async (input) => {
+    console.log('Executed with input:', input);
   }
 });
 
-await runtime.execute('example');
+await runtime.execute('example', { message: 'Hello!' });
 
 console.log(runtime.inspect());
 

@@ -17,7 +17,10 @@ function Counter() {
   useXSkill({
     id: \"increment\",
     description: \"Increment counter\",
-    handler: () => setCount(c => c + 1)
+    handler: async (input?: {by?: number}) => {
+      const by = input?.by ?? 1;
+      setCount(c => c + by);
+    }
   });
 
   return <div>
@@ -30,7 +33,7 @@ function Counter() {
 **Execute:**
 
 ```js
-window.__XSKILLS__.execute(\"increment\");
+window.__XSKILLS__.execute(\"increment\", {by: 10});
 ```
 
 ## Installation
@@ -54,7 +57,7 @@ import { getXSkillsRuntime } from \"@x-skills-for-ai/core\";
 
 const runtime = getXSkillsRuntime();
 runtime.register({ id, description, handler });
-await runtime.execute(\"id\");
+await runtime.execute(\"id\", {input: \"data\"});
 ```
 
 ## Support
