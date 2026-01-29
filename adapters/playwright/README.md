@@ -7,7 +7,10 @@ Not a test framework. Not a selector abstraction. Not AI magic.
 ## Install
 
 ```bash
-npm i -D @x-skills-for-ai/playwright-adapter @playwright/test
+cd examples/playwright/example1/
+npm i
+# uses   @x-skills-for-ai/playwright-adapter   @playwright/test
+npm run test
 ```
 
 Peer dependency: `@x-skills-for-ai/core` (your app provides the runtime in the browser)
