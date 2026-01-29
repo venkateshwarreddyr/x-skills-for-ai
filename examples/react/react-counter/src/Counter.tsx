@@ -9,14 +9,14 @@ export function Counter() {
   useXSkill({
     id: "increment",
     description: "Increase counter",
-    handler: () => setCount(c => c + 1)
+    handler: async () => { setCount(c => c + 1) }
   })
 
   // Register decrement skill
   useXSkill({
     id: "decrement",
     description: "Decrease counter",
-    handler: () => setCount(c => c - 1)
+    handler: async () => { setCount(c => c - 1) }
   })
 
   return (
