@@ -1,6 +1,6 @@
 {
   "name": "@x-skills-for-ai/core",
-  "version": "1.0.1",
+  "version": "2.0.7",
   "description": "Framework-agnostic core runtime for registering, executing, and inspecting XSkills in the browser.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,11 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "dev": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "publish": "npm publish --access public",
+    "patch": "npm version patch && npm publish --access public",
+    "minor": "npm version minor && npm publish --access public",
+    "major": "npm version major && npm publish --access public"
   },
   "devDependencies": {
     "typescript": "^5.5.4",

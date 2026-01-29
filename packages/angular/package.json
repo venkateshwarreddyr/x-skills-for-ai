@@ -1,6 +1,6 @@
 {
   "name": "@x-skills-for-ai/angular",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular service for xskills-core integration",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
     "@angular/core": "^17.0.0"
   },
   "dependencies": {
-    "@x-skills-for-ai/core": "^1.0.0"
+    "@x-skills-for-ai/core": "^2.0.6"
   },
   "devDependencies": {
     "@angular/core": "^17.0.0",
@@ -21,7 +21,10 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "dev": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "patch": "npm version patch && npm publish --access public",
+    "minor": "npm version minor && npm publish --access public",
+    "major": "npm version major && npm publish --access public"
   },
   "keywords": [
     "xskills",

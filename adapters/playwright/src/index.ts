@@ -1,6 +1,6 @@
 import type { XSkillsPage } from './types'
 import { test as base } from '@playwright/test'
-import { attachXSkills } from './helpers'
+import { attachXSkills } from './helpers.js'
 
 export { attachXSkills }
 
