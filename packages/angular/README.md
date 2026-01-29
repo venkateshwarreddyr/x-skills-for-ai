@@ -1,11 +1,11 @@
-# xskills-angular
+# @x-skills-for-ai/angular
 
-Angular directive for [xskills-core](..).
+Angular directive for [@x-skills-for-ai/core](..).
 
 ## Installation
 
 ```
-npm install xskills-angular xskills-core @angular/core @angular/common @angular/platform-browser
+npm install @x-skills-for-ai/angular
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm install xskills-angular xskills-core @angular/core @angular/common @angular/
 ```ts
 import { Component } from '@angular/core';
 import { XSkillDefinition } from 'xskills-core';
-import { XSkillDirective } from 'xskills-angular';
+import { XSkillDirective } from '@x-skills-for-ai/angular';
 
 @Component({
   selector: 'app-counter',

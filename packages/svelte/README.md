@@ -1,18 +1,18 @@
-# xskills-svelte
+# @x-skills-for-ai/svelte
 
-Svelte integration for [xskills-core](..).
+Svelte integration for [@x-skills-for-ai/core](..).
 
 ## Installation
 
 ```
-npm install xskills-svelte xskills-core svelte
+npm install @x-skills-for-ai/svelte
 ```
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-  import { useXSkill } from 'xskills-svelte';
+  import { useXSkill } from '@x-skills-for-ai/svelte';
 
   let count = 0;
 

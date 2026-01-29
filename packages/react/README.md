@@ -1,18 +1,18 @@
-# xskills-react
+# @x-skills-for-ai/react
 
-React integration for [xskills-core](..).
+React integration for [@x-skills-for-ai/core](..).
 
 ## Installation
 
 ```
-npm install xskills-react xskills-core react react-dom
+npm install @x-skills-for-ai/react
 ```
 
 ## Usage
 
 ```tsx
 import React, { useState } from 'react';
-import { useXSkill } from 'xskills-react';
+import { useXSkill } from '@x-skills-for-ai/react';
 
 function Counter() {
   const [count, setCount] = useState(0);

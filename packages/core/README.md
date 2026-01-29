@@ -1,17 +1,17 @@
-# xskills-core
+# @x-skills-for-ai/core
 
 Framework agnostic core runtime.
 
 ## Installation
 
 ```
-npm install xskills-core
+npm install @x-skills-for-ai/core
 ```
 
 ## Usage
 
 ```ts
-import { getXSkillsRuntime, XSkillDefinition } from 'xskills-core';
+import { getXSkillsRuntime, XSkillDefinition } from '@x-skills-for-ai/core';
 
 const runtime = getXSkillsRuntime();
 
