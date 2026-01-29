@@ -64,17 +64,20 @@ await runtime.execute(\"id\");
 | React | [@x-skills-for-ai/react](packages/react) |
 | Svelte | [@x-skills-for-ai/svelte](packages/svelte) |
 | Angular | [@x-skills-for-ai/angular](packages/angular) |
+| Playwright | [@x-skills-for-ai/playwright-adapter](adapters/playwright) |
 
 ## Examples
 
-- [React](examples/react/react-counter)
-- [Playwright](examples/playwright-example)
+- [React Counter](examples/react/react-counter)
+- [Playwright Counter](examples/playwright/example1)
 
 ## Status
 
-- ✅ Core v1.0+
-- ✅ Framework wrappers
-- 🚧 Docs & more adapters
+- ✅ Core runtime v1.0+
+- ✅ Framework integrations (React, Svelte, Angular)
+- ✅ Playwright adapter v1.1+
+- 🚧 Comprehensive docs
+- 🚧 More examples & adapters
 
 ## Non-Goals
 
@@ -82,13 +85,24 @@ await runtime.execute(\"id\");
 - Server-side
 - UI framework
 
-## Contributing
+## Development
 
+This is an npm workspaces monorepo.
+
+### Setup
 ```bash
-cd examples/react/react-counter
 npm install
-npm run dev
 ```
+
+### Build all packages
+```bash
+npm run build:all
+```
+
+### Development
+
+- React example: `npm run dev:react-example`
+- Playwright example: `cd examples/playwright/example1 && npm i && npx playwright test`
 
 ## License
 
