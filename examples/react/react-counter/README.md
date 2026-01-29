@@ -5,7 +5,7 @@ This is a full React app demonstrating the `@x-skills-for-ai/react` wrapper.
 ## Folder Structure
 
 ```
-examples/react-counter/
+examples/react/react-counter/
 ├─ package.json
 ├─ tsconfig.json
 ├─ vite.config.ts
@@ -41,7 +41,7 @@ npm run dev:react-example
 Or:
 
 ```bash
-cd examples/react-counter
+cd examples/react/react-counter
 npm run dev
 ```
 

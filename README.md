@@ -196,7 +196,7 @@ window.__XSKILLS__.execute("increment");
 
 ## 9. Examples
 
-### [`react-counter`](examples/react-counter/)
+### [`react-counter`](examples/react/react-counter/)
 
 Full Vite + React + TypeScript app demonstrating [`xskills-react`](xskills/packages/react/).
 
@@ -226,7 +226,7 @@ Open [http://localhost:5173/react-counter/](http://localhost:5173/react-counter/
 
 #### Key Implementation
 
-[`examples/react-counter/src/Counter.tsx`](examples/react-counter/src/Counter.tsx):
+[`examples/react/react-counter/src/Counter.tsx`](examples/react/react-counter/src/Counter.tsx):
 
 ```tsx
 import React, { useState } from "react";
