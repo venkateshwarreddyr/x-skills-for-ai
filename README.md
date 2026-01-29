@@ -36,7 +36,7 @@ window.__XSKILLS__.execute(\"increment\");
 ## Installation
 
 ```bash
-npm install @x-skills-for-ai/core @x-skills-for-ai/react
+npm install @x-skills-for-ai/react
 ```
 
 ## How it works
