@@ -101,7 +101,7 @@ npm run build:all
 
 ### Development
 
-- React example: `npm run dev:react-example`
+- React example: `cd examples/react/react-counter && npm i && npm run dev`
 - Playwright example: `cd examples/playwright/example1 && npm i && npx playwright test`
 
 ## License
