@@ -221,7 +221,8 @@ npm run dev
 
 2
 
-Open [`http://localhost:3000`](http://localhost:3000)
+Open [http://localhost:5173/react-counter/](http://localhost:5173/react-counter/)
+
 
 #### Key Implementation
 

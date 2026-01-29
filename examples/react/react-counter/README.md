@@ -45,7 +45,7 @@ cd examples/react-counter
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000)
+4. Open [http://localhost:5173/react-counter/](http://localhost:5173/react-counter/)
 
 ## Features
 
