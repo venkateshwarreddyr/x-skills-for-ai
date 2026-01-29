@@ -1,0 +1,47 @@
+name: Publish packages to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build all packages
+        run: npm run build:all
+
+      - name: Publish @x-skills-for-ai/core
+        run: npm publish --workspace=@x-skills-for-ai/core --access public
+
+      - name: Publish @x-skills-for-ai/angular
+        run: npm publish --workspace=@x-skills-for-ai/angular --access public
+
+      - name: Publish @x-skills-for-ai/react
+        run: npm publish --workspace=@x-skills-for-ai/react --access public
+
+      - name: Publish @x-skills-for-ai/svelte
+        run: npm publish --workspace=@x-skills-for-ai/svelte --access public
+
+      - name: Publish @x-skills-for-ai/playwright-adapter
+        run: |
+          cd adapters/playwright
+          npm ci
+          npm publish --access public
