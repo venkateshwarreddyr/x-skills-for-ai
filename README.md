@@ -202,9 +202,11 @@ Full Vite + React + TypeScript app demonstrating [`xskills-react`](xskills/packa
 
 #### Quickstart
 
+1
+
 ```bash
 # From xskills/ root
-npm install
+npm i
 npm run build:all
 npm run dev:react-example
 ```
@@ -212,9 +214,12 @@ npm run dev:react-example
 Or:
 
 ```bash
-cd examples/react-counter
+cd examples/react/react-counter
+npm i
 npm run dev
 ```
+
+2
 
 Open [`http://localhost:3000`](http://localhost:3000)
 
