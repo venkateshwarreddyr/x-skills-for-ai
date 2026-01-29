@@ -11,7 +11,7 @@
     "build": "npm run build --workspaces --if-present",
     "build:all": "npm run build --workspaces",
     "dev": "npm run dev --workspaces --if-present",
-    "dev:react-example": "npm run dev --workspace=examples/react-counter"
+    "dev:react-example": "npm run dev --workspace=examples/react/react-counter"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
