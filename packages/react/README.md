@@ -26,7 +26,7 @@ function Counter() {
   return (
     <div>
       <h1>Count: {count}</h1>
-      <p>Open console and run: await getXSkillsRuntime().execute('increment')</p>
+      <p>Open the browser console and run: await window.__XSKILLS__.execute('increment') (see Global Runtime Access)</p>
     </div>
   );
 }
@@ -35,3 +35,26 @@ function Counter() {
 See [example.tsx](example.tsx) for full code.
 
 The hook automatically registers the skill on mount and unregisters on unmount.
+
+## Global Runtime Access
+
+[`getXSkillsRuntime()`](../core/src/index.ts) from `@x-skills-for-ai/core` provides access to the global singleton [`XSkillsRuntime`](../core/src/xskills.runtime.ts).
+
+### With import:
+```ts
+import { getXSkillsRuntime } from '@x-skills-for-ai/core';
+
+const runtime = getXSkillsRuntime();
+await runtime.execute('increment');
+
+// Inspect registered skills
+console.log(runtime.inspect());
+```
+
+### Browser console:
+```js
+await window.__XSKILLS__.execute('increment');
+console.log(window.__XSKILLS__.inspect());
+```
+
+**Note:** Only available in browser environments.
