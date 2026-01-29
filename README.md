@@ -1,304 +1,95 @@
-# XSkills Project — Multi-Framework Architecture
+# XSkills
 
-## 1. Objective
+Framework-agnostic runtime to expose intention-based skills (clicks, forms, flows) to AI agents and automation across React, Svelte, Angular, Playwright.
 
-- Build a **core runtime** (`xskills-core`) that is **framework/library agnostic**.
-- Provide **framework-specific wrappers**:
-  - React: `xskills-react`
-  - Svelte: `xskills-svelte`
-  - Angular: `xskills-angular`
-- LLMs, Playwright, and Node APIs can interact with the **core runtime**.
-- Apps can **register skills** and **execute them** regardless of framework.
-- Skills are **intention-based**, inspectable, and deterministic.
-- Framework wrappers provide **convenient hooks or directives** to register skills.
+## Quick Example
 
-## 2. Core Design Principles
+**React:**
 
-1. **Framework Agnostic Core**
-   - No React, Svelte, or Angular imports in core.
-   - Pure JS/TS runtime: registration, execution, inspection.
-2. **Wrapper Packages Are Optional**
-   - Only provide lifecycle integration.
-   - No logic duplication.
-3. **Global Runtime**
-   - `window.__XSKILLS__` is the single runtime instance per browser.
-4. **Skill Isolation**
-   - Skills are registered/unregistered via owner or component.
-5. **LLM/Automation Friendly**
-   - Skills can be executed programmatically via Node, Playwright, WebView, Electron, or browser console.
-
-## 3. Folder / Module Structure
-
-```
-xskills/
-├─ packages/
-│  ├─ core/                     <-- framework agnostic core
-│  │   ├─ src/
-│  │   │   ├─ xskills.runtime.ts
-│  │   │   ├─ xskills.register.ts
-│  │   │   └─ index.ts
-│  │   ├─ package.json
-│  │   └─ README.md
-│  │
-│  ├─ react/                    <-- React wrapper
-│  │   ├─ src/
-│  │   │   ├─ useXSkill.ts      <-- React hook for registration
-│  │   │   └─ index.ts
-│  │   ├─ package.json
-│  │   └─ README.md
-│  │
-│  ├─ svelte/                   <-- Svelte wrapper
-│  │   ├─ src/
-│  │   │   ├─ useXSkill.svelte  <-- Svelte action/helper
-│  │   │   └─ index.ts
-│  │   ├─ package.json
-│  │   └─ README.md
-│  │
-│  └─ angular/                  <-- Angular wrapper
-│      ├─ src/
-│      │   ├─ xskills.directive.ts
-│      │   └─ index.ts
-│      ├─ package.json
-│      └─ README.md
-│
-├─ package.json                  <-- monorepo root (yarn/npm workspace)
-└─ README.md
-```
-
-## 4. Core Package: xskills-core
-
-### Responsibilities
-
-- Skill registration / unregistration
-- Skill execution
-- Skill inspection
-- Global runtime (`window.__XSKILLS__`)
-- Safe for LLMs/Playwright
-
-### Public API
-
-[`getXSkillsRuntime()`](xskills/packages/core/src/index.ts) and [`XSkillDefinition`](xskills/packages/core/src/types.ts)
-
-```ts
-import { getXSkillsRuntime, XSkillDefinition } from "xskills-core";
-
-// Register skill
-const unregister = getXSkillsRuntime().register({
-  id: "increment",
-  description: "Increment counter",
-  handler: () => console.log("Incremented!"),
-});
-
-// Execute skill
-await getXSkillsRuntime().execute("increment");
-
-// Inspect
-const skills = getXSkillsRuntime().inspect();
-
-// Unregister
-unregister();
-```
-
-## 5. Framework Wrappers
-
-### 5.1 React (`xskills-react`)
-
-- Provides `useXSkill(skill: XSkillDefinition)` hook
-- Registers skill on mount, unregisters on unmount
-
-**Example:**
+[`useXSkill`](packages/react/src/useXSkill.ts)
 
 ```tsx
-import { useXSkill } from "xskills-react";
+import { useXSkill } from \"@x-skills-for-ai/react\";
 
-useXSkill({
-  id: "increment",
-  description: "Increase counter",
-  handler: () => setCount((c) => c + 1),
-});
-```
-
-### 5.2 Svelte (`xskills-svelte`)
-
-- Provides `useXSkill` action/helper
-- Registers skill on mount, unregisters on destroy
-
-**Example:**
-
-```svelte
-<script>
-  import { useXSkill } from "xskills-svelte"
-
-  let count = 0
+function Counter() {
+  const [count, setCount] = useState(0);
 
   useXSkill({
-    id: "increment",
-    description: "Increase counter",
-    handler: () => count += 1
-  })
-</script>
+    id: \"increment\",
+    description: \"Increment counter\",
+    handler: () => setCount(c => c + 1)
+  });
 
-<h1>{count}</h1>
-<button on:click={() => count += 1}>Increment</button>
-```
-
-### 5.3 Angular (`xskills-angular`)
-
-- Provides `XSkillDirective` or service
-- Skills are registered/unregistered with component lifecycle
-
-**Example:**
-
-```ts
-@Component({...})
-export class CounterComponent {
-  constructor(private xskills: XSkillsService) {}
-
-  ngOnInit() {
-    this.xskills.register({
-      id: "increment",
-      description: "Increment counter",
-      handler: () => this.count++
-    })
-  }
+  return <div>
+    <h1>{count}</h1>
+    <button>+</button>
+  </div>;
 }
 ```
 
-## 6. LLM / Automation Integration
+**Execute:**
 
-- Node exposes HTTP API
-- Uses Playwright / Puppeteer / Electron to call:
-
-```ts
-window.__XSKILLS__.inspect();
-window.__XSKILLS__.execute("increment");
+```js
+window.__XSKILLS__.execute(\"increment\");
 ```
 
-- No DOM scraping
-- Deterministic and safe
-
-## 7. Versioning & Publishing Strategy
-
-- **Monorepo with workspaces** (yarn or npm)
-- `core` published first
-- Each wrapper depends on `core`
-- Minor versions for wrapper updates
-- Core version bump triggers wrapper updates
-
-## 8. Success Criteria
-
-1. Core works **without React/Svelte/Angular**
-2. Each wrapper works with **its framework lifecycle**
-3. LLMs / Playwright can **inspect/execute skills**
-4. Skills are **intention-based** and **deterministic**
-5. Easy for developers to integrate into **existing apps**
-6. No DOM hacks or framework coupling in core
-
-## 9. Examples
-
-### [`react-counter`](examples/react/react-counter/)
-
-Full Vite + React + TypeScript app demonstrating [`xskills-react`](xskills/packages/react/).
-
-#### Quickstart
-
-1
+## Installation
 
 ```bash
-# From xskills/ root
-npm i
-npm run build:all
-npm run dev:react-example
+npm install @x-skills-for-ai/core @x-skills-for-ai/react
 ```
 
-Or:
+## How it works
+
+1. Register skills in components using framework hooks.
+2. Global [`window.__XSKILLS__`](packages/core/src/xskills.runtime.ts) runtime manages them.
+3. Inspect: `runtime.inspect()` & Execute: `runtime.execute(id)`.
+
+## API
+
+[`getXSkillsRuntime`](packages/core/src/index.ts)
+
+```ts
+import { getXSkillsRuntime } from \"@x-skills-for-ai/core\";
+
+const runtime = getXSkillsRuntime();
+runtime.register({ id, description, handler });
+await runtime.execute(\"id\");
+```
+
+## Support
+
+| Framework | Package |
+|-----------|---------|
+| React | [@x-skills-for-ai/react](packages/react) |
+| Svelte | [@x-skills-for-ai/svelte](packages/svelte) |
+| Angular | [@x-skills-for-ai/angular](packages/angular) |
+
+## Examples
+
+- [React](examples/react/react-counter)
+- [Playwright](examples/playwright-example)
+
+## Status
+
+- ✅ Core v1.0+
+- ✅ Framework wrappers
+- 🚧 Docs & more adapters
+
+## Non-Goals
+
+- Replaces Playwright/Cypress
+- Server-side
+- UI framework
+
+## Contributing
 
 ```bash
 cd examples/react/react-counter
-npm i
+npm install
 npm run dev
 ```
 
-2
+## License
 
-Open [http://localhost:5173/react-counter/](http://localhost:5173/react-counter/)
-
-
-#### Key Implementation
-
-[`examples/react/react-counter/src/Counter.tsx`](examples/react/react-counter/src/Counter.tsx):
-
-```tsx
-import React, { useState } from "react";
-import { useXSkill } from "xskills-react";
-
-export function Counter() {
-  const [count, setCount] = useState(0);
-
-  // Register increment skill
-  useXSkill({
-    id: "increment",
-    description: "Increase counter",
-    handler: () => setCount((c) => c + 1),
-  });
-
-  // Register decrement skill
-  useXSkill({
-    id: "decrement",
-    description: "Decrease counter",
-    handler: () => setCount((c) => c - 1),
-  });
-
-  return (
-    <div>
-      <h2>Counter: {count}</h2>
-      <button onClick={() => setCount((c) => c + 1)}>Increment</button>
-      <button onClick={() => setCount((c) => c - 1)}>Decrement</button>
-    </div>
-  );
-}
-```
-
-#### LLM/Automation Test
-
-Browser console or Playwright:
-
-```js
-window.__XSKILLS__.inspect();
-window.__XSKILLS__.execute("increment");
-window.__XSKILLS__.execute("decrement");
-```
-
-## Enterprise Features
-
-XSkills core includes production-grade features:
-
-### Structured Telemetry
-
-Every execution emits console logs and `CustomEvent('xskills:telemetry')` with skillId, duration, status, actor (from ctx), etc. in [`xskills.runtime.ts`](xskills/packages/core/src/xskills.runtime.ts).
-
-### Skill Versioning
-
-SemVer support (exact, ^major, latest):
-
-```ts
-register({ id: "counter.increment", version: "1.2.3", handler: ... });
-await runtime.execute("counter.increment@latest");
-await runtime.execute("counter.increment@^1");
-```
-
-### Metadata Inspection
-
-```ts
-const skills = runtime.inspect(); // all skill defs across versions
-```
-
-### Dry-Run / Simulation
-
-Skip handler, emit telemetry:
-
-```ts
-await runtime.execute("counter.increment", ctx, { dryRun: true });
-```
-
-Top 5 roadmap complete. Core ready for enterprise scale, safe AI agents, platform teams.
+MIT
