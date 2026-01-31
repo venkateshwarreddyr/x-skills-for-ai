@@ -22,7 +22,7 @@ Framework-agnostic runtime to expose intention-based skills (clicks, forms, flow
 
 ## Demo
 
-[![AI First Apps X Skills for AI Demo](ai-first-apps-x-skills-for-ai-demo.mp4)](ai-first-apps-x-skills-for-ai-demo.mp4)
+<video src="ai-first-apps-x-skills-for-ai-demo.mp4" width="100%" height="auto" controls></video>
 
 ## Quick Example
 
@@ -60,8 +60,29 @@ window.__XSKILLS__.execute("increment", {by: 10});
 
 ## Installation
 
+### Core
+```bash
+npm install @x-skills-for-ai/core
+```
+
+### React
 ```bash
 npm install @x-skills-for-ai/react
+```
+
+### Svelte
+```bash
+npm install @x-skills-for-ai/svelte
+```
+
+### Angular
+```bash
+npm install @x-skills-for-ai/angular
+```
+
+### Playwright Adapter
+```bash
+npm install @x-skills-for-ai/playwright-adapter
 ```
 
 ## How it works
