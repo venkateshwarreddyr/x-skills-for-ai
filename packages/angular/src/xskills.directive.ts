@@ -2,7 +2,8 @@ import { Directive, Input, OnInit, OnDestroy } from '@angular/core';
 import { XSkillDefinition, getXSkillsRuntime } from '@x-skills-for-ai/core';
 
 @Directive({
-  selector: '[xSkill]'
+  selector: '[xSkill]',
+  standalone: true
 })
 export class XSkillDirective implements OnInit, OnDestroy {
   @Input('xSkill') def!: XSkillDefinition;
