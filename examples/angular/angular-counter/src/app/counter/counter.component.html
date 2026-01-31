@@ -1,0 +1,5 @@
+<div style="display: none" xSkill [xSkill]="incrementDef"></div>
+<div style="display: none" xSkill [xSkill]="decrementDef"></div>
+<h2 data-testid="count">Counter: {{ count() }}</h2>
+<button (click)="count.update(c => c + 1)">Increment</button>
+<button (click)="count.update(c => c - 1)">Decrement</button>

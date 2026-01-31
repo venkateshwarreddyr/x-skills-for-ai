@@ -1,0 +1,47 @@
+{
+  "name": "angular-counter-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "dev": "ng serve",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "preview": "ng serve --configuration production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist/angular-counter"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "packageManager": "npm@10.9.3",
+  "dependencies": {
+    "@angular/common": "^18.1.0",
+    "@angular/compiler": "^18.1.0",
+    "@angular/core": "^18.1.0",
+    "@angular/forms": "^18.1.0",
+    "@angular/platform-browser": "^18.1.0",
+    "@angular/router": "^18.1.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "@x-skills-for-ai/angular": "file:../../../packages/angular"
+  },
+  "devDependencies": {
+    "@angular/build": "^18.1.2",
+    "@angular/cli": "^18.1.2",
+    "@angular/compiler-cli": "^18.1.0",
+    "typescript": "~5.4.5",
+    "gh-pages": "^6.3.0"
+  }
+}
