@@ -76,10 +76,6 @@ npm install @x-skills-for-ai/react
 npm install @x-skills-for-ai/svelte
 ```
 
-### Angular
-```bash
-npm install @x-skills-for-ai/angular
-```
 
 ### Playwright Adapter
 ```bash
