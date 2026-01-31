@@ -1,6 +1,28 @@
 # XSkills
 
+Apps were built for humans first — browsers, buttons, and screens.
+Now AI is starting to interact with software as a user.
+
+This raises an interesting question: how should apps expose functionality to AI?
+
+With x-skills-for-ai, apps expose skills instead of screens — structured actions with clear inputs and predictable execution.
+
+These skills can be built using familiar tools like React, Angular, or Svelte.
+The UI is optional and mainly used as a developer surface.
+
+**UIs are for humans. Skills are for AI.**
+
+## Links
+
+- **Core Package**: https://www.npmjs.com/package/@x-skills-for-ai/core
+- **React Package**: https://www.npmjs.com/package/@x-skills-for-ai/react
+- **Source Code & Examples**: https://github.com/venkateshwarreddyr/x-skills-for-ai
+
 Framework-agnostic runtime to expose intention-based skills (clicks, forms, flows) to AI agents and automation across React, Svelte, Angular, Playwright.
+
+## Demo
+
+[![AI First Apps X Skills for AI Demo](ai-first-apps-x-skills-for-ai-demo.mp4)](ai-first-apps-x-skills-for-ai-demo.mp4)
 
 ## Quick Example
 
