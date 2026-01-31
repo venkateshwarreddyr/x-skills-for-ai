@@ -22,7 +22,8 @@ Framework-agnostic runtime to expose intention-based skills (clicks, forms, flow
 
 ## Demo
 
-<video src="ai-first-apps-x-skills-for-ai-demo.mp4" width="100%" height="auto" controls></video>
+https://github.com/user-attachments/assets/6722b1fc-9113-4770-915b-fed7f40c0f0b
+
 
 ## Quick Example
 
