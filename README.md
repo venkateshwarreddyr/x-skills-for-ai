@@ -9,14 +9,14 @@ Framework-agnostic runtime to expose intention-based skills (clicks, forms, flow
 [`useXSkill`](packages/react/src/useXSkill.ts)
 
 ```tsx
-import { useXSkill } from \"@x-skills-for-ai/react\";
+import { useXSkill } from "@x-skills-for-ai/react";
 
 function Counter() {
   const [count, setCount] = useState(0);
 
   useXSkill({
-    id: \"increment\",
-    description: \"Increment counter\",
+    id: "increment",
+    description: "Increment counter",
     handler: async (input?: {by?: number}) => {
       const by = input?.by ?? 1;
       setCount(c => c + by);
@@ -33,7 +33,7 @@ function Counter() {
 **Execute:**
 
 ```js
-window.__XSKILLS__.execute(\"increment\", {by: 10});
+window.__XSKILLS__.execute("increment", {by: 10});
 ```
 
 ## Installation
@@ -53,11 +53,11 @@ npm install @x-skills-for-ai/react
 [`getXSkillsRuntime`](packages/core/src/index.ts)
 
 ```ts
-import { getXSkillsRuntime } from \"@x-skills-for-ai/core\";
+import { getXSkillsRuntime } from "@x-skills-for-ai/core";
 
 const runtime = getXSkillsRuntime();
 runtime.register({ id, description, handler });
-await runtime.execute(\"id\", {input: \"data\"});
+await runtime.execute("id", {input: "data"});
 ```
 
 ## Support
