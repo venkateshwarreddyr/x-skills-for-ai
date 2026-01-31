@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@x-skills-for-ai/svelte": "file:../../../packages/svelte"
+    "@x-skills-for-ai/svelte": "^1.1.0"
   },
   "scripts": {
     "dev": "vite",
