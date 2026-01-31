@@ -27,4 +27,12 @@ export class CounterComponent {
       this.count.update(c => c - 1);
     }
   };
+
+  increment() {
+    this.count.update(c => c + 1);
+  }
+
+  decrement() {
+    this.count.update(c => c - 1);
+  }
 }

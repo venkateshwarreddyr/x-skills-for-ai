@@ -6,7 +6,7 @@ import { XSkillDefinition, getXSkillsRuntime } from '@x-skills-for-ai/core';
   standalone: true
 })
 export class XSkillDirective implements OnInit, OnDestroy {
-  @Input('xSkill') def!: XSkillDefinition;
+  @Input('xSkillDef') def!: XSkillDefinition;
 
   private unregister: (() => void) | null = null;
 
