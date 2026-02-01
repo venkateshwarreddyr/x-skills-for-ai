@@ -1,0 +1,23 @@
+{
+  "name": "svelte-counter-example",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@x-skills-for-ai/svelte": "^1.1.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "rm -rf deploy && mkdir -p deploy/svelte-counter && cp -r dist/* deploy/svelte-counter/ && gh-pages -d deploy"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
+    "@tsconfig/svelte": "^5.0.6",
+    "gh-pages": "^6.3.0",
+    "svelte": "^4.2.19",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.8"
+  }
+}
