@@ -1,6 +1,6 @@
 {
   "name": "@x-skills-for-ai/svelte",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Svelte helper for easy integration with xskills-core",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

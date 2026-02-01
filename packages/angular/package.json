@@ -1,6 +1,6 @@
 {
   "name": "@x-skills-for-ai/angular",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Angular service for xskills-core integration",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
