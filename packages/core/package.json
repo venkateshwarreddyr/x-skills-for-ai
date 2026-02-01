@@ -32,6 +32,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
-  }
+    "url": "https://github.com/venkateshwarreddyr/xskills.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/venkateshwarreddyr/xskills/tree/main/packages/core"
 }

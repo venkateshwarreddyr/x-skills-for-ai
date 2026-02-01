@@ -31,5 +31,11 @@
     "skills"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/venkateshwarreddyr/xskills.git",
+    "directory": "packages/svelte"
+  },
+  "homepage": "https://github.com/venkateshwarreddyr/xskills/tree/main/packages/svelte"
 }
